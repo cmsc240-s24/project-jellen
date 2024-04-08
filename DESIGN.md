@@ -52,7 +52,58 @@ Movie Retailers: Businesses or individuals who manage the sale and distribution 
 **Genres**
 
 - **Create (POST)**
+As a movie retailer, Jellen wants to add new genres reflecting the latest trends in cinema, ensuring customers can explore and find movies aligned with current popular categories.
 
+- **Read (GET)**
+As a movie enthusiast, I want to explore various movie genres to discover new films that match my preferences. As a movie retailer, Jellen needs to review the list of genres to organize the store's layout and recommend movies based on popular categories.
+
+- **Update (PUT)**
+As a movie retailer, Jellen aims to update genre information to stay current with changes in movie classification and ensure the inventory is accurately categorized.
+
+- **Delete (DELETE)**
+As a movie retailer, Jellen seeks to remove outdated genres from the database to streamline inventory management.
+
+**Directors**
+- **Create (POST)**
+As a movie retailer, Jellen intends to add profiles for new directors to promote their movies in-store and online.
+
+- **Read (GET)**
+As a movie fan, I want to find movies directed by my favorite directors.
+As a movie retailer, Jellen needs to access the list of directors to update the inventory and create promotional material for upcoming releases.
+
+- **Update (PUT)**
+As a movie retailer, Jellen wants to update director profiles with new movie releases or changes in their career to provide customers with the latest information.
+
+- **Delete (DELETE)**
+As a movie retailer, Jellen needs to remove directors who are no longer relevant or whose movies are no longer carried in the store.
+
+**Movies**
+- **Create (POST)**
+As a movie retailer, Jellen aims to add new movies to the catalog as they are released to offer the latest selections to customers.
+
+- **Read (GET)**
+As a movie enthusiast, I want to browse movies to find new releases or classic films I wish to purchase.
+As a movie retailer, Jellen needs to view the complete list of movies to manage stock levels and ensure the latest releases are available.
+
+- **Update (PUT)**
+As a movie retailer, Jellen wants to update movie information, such as price or genre, to keep the inventory accurate and up-to-date for customers.
+
+- **Delete (DELETE)**
+As a movie retailer, Jellen needs to remove movies that are no longer available or have been discontinued from the stock listings.
+
+**DVDs**
+- **Create (POST)**
+As a movie retailer, Jellen wants to list new DVDs as they become available, ensuring the product offerings are current.
+
+- **Read (GET)**
+As a customer, I want to search for DVDs, focusing on finding the best deals or rare finds.
+As a movie retailer, Jellen needs to review DVDs in the inventory for pricing adjustments and stock replenishment.
+
+- **Update (PUT)**
+As a movie retailer, Jellen wants to modify DVD details, such as price or stock quantity, to reflect changes in inventory or promotions.
+
+- **Delete (DELETE)**
+As a movie retailer, Jellen needs to delete listings of DVDs that are sold out or removed from the catalog to maintain an accurate online storefront.
 
 ## List Of Resources
 
