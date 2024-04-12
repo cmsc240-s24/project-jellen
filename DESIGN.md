@@ -107,9 +107,189 @@ As a movie retailer, Jellen needs to delete listings of DVDs that are sold out o
 
 ## List Of Resources
 
+- **Genre**: A category of movies, such as Horror, Romantic Comedy, or Psychological Thriller.
+- **Director**: An individual that supervises staff to create a piece of film.
+- **Movie**: A story recorded by a camera shown in a theater or on television.
+- **Jellen Review**: A movie review made by the creators of the Movie API.
 
 
 ## List of End Points
+In the context of this API, {id} would typically be replaced by a unique identifier for the resource, such as a string or a number that uniquely identifies a genre, director, movie, or Jellen review.
+
+### Genres
+- **POST** `/api/genres`
+  - **Description**: Create a new genre.
+  - **Request BODY**: `{"id":"1", "genre":"Horror"}`
+  - **Response**: `201 Created` with the created genre object in the body.
+  - **Error**: `400 Bad Request` if input validation fails.
+
+- **GET** `/api/genres`
+  - **Description**: Retrieve a list of all genres.
+  - **Response**: `200 OK` with an array of genre objects in the body.
+
+- **GET** `/api/genres/{id}`
+  - **Description**: Retrieve details of a specific genre.
+  - **Response**: `200 OK` with the genre object in the body.
+  - **Error**: `404 Not Found` if the genre does not exist.
+
+- **PUT** `/api/genres/{id}`
+  - **Description**: Update an existing genre.
+  - **Request BODY**: `{"id":"1", "genre":"Horror"}`
+  - **Response**: `200 OK` with the updated genre object in the body.
+  - **Error**: `400 Bad Request` if input validation fails; `404 Not Found` if the genre does not exist.
+
+- **DELETE** `/api/genres/{id}`
+  - **Description**: Delete a specific genre.
+  - **Response**: `204 No Content`.
+  - **Error**: `404 Not Found` if the genre does not exist; `403 Forbidden` if the user is unauthorized.
+
+### Directors
+- **POST** `/api/directors`
+  - **Description**: Add a new director profile to the catalog.
+  - **Request BODY**: `{"id":"1", "director":"Steven Spielberg"}`
+  - **Response**: `201 Created` with the created director object in the body.
+  - **Error**: `400 Bad Request` if input validation fails.
+
+- **GET** `/api/directors`
+  - **Description**: Retrieve a list of all director profiles.
+  - **Response**: `200 OK` with an array of director objects in the body.
+
+- **GET** `/api/directors/{id}`
+  - **Description**: Retrieve details of a specific director.
+  - **Response**: `200 OK` with the director object in the body.
+  - **Error**: `404 Not Found` if the director does not exist.
+
+- **PUT** `/api/directors/{id}`
+  - **Description**: Update the profile of an existing director.
+  - **Request BODY**: `{"id":"1", "director":"Steven Spielberg"}`
+  - **Response**: `200 OK` with the updated director object in the body.
+  - **Error**: `400 Bad Request` if input validation fails; `404 Not Found` if the director does not exist.
+
+- **DELETE** `/api/directors/{id}`
+  - **Description**: Remove a director profile from the catalog.
+  - **Response**: `204 No Content`.
+  - **Error**: `404 Not Found` if the director does not exist; `403 Forbidden` if the user is unauthorized.
+
+### Movies
+- **POST** `/api/movies`
+  - **Description**: Add a new movie to the catalog.
+  - **Request BODY**: 
+    ```
+    {
+        "id": "1",
+        "length": 195,
+        "rating": "R",
+        "title": "Schindler's List",
+        "linkToPoster": "https://image.tmdb.org/t/p/original/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
+        "cost": 6.99,
+        "mediaType": "movie",
+        "genre": {
+            "id": "1"
+        },
+        "directors": [
+            {
+                "id": "1"
+            }
+        ]
+    }
+    ```
+  - **Response**: `201 Created` with the created movie object in the body.
+  - **Error**: `400 Bad Request` if input validation fails.
+
+- **GET** `/api/movies`
+  - **Description**: Retrieve a list of all movies.
+  - **Response**: `200 OK` with an array of movie objects in the body.
+
+- **GET** `/api/movies/{id}`
+  - **Description**: Retrieve details of a specific movie.
+  - **Response**: `200 OK` with the movie object in the body.
+  - **Error**: `404 Not Found` if the movie does not exist.
+
+- **PUT** `/api/movies/{id}`
+  - **Description**: Update the details of an existing movie.
+  - **Request BODY**: 
+    ```
+    {
+        "id": "1",
+        "length": 195,
+        "rating": "R",
+        "title": "Schindler's List",
+        "linkToPoster": "https://image.tmdb.org/t/p/original/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
+        "cost": 6.99,
+        "mediaType": "movie",
+        "genre": {
+            "id": "1"
+        },
+        "directors": [
+            {
+                "id": "1"
+            }
+        ]
+    }
+    ```
+  - **Response**: `200 OK` with the updated movie object in the body.
+  - **Error**: `400 Bad Request` if input validation fails; `404 Not Found` if the movie does not exist.
+
+- **DELETE** `/api/movies/{id}`
+  - **Description**: Remove a movie from the catalog.
+  - **Response**: `204 No Content`.
+  - **Error**: `404 Not Found` if the movie does not exist; `403 Forbidden` if the user is unauthorized.
+
+### Jellen Reviews
+- **POST** `/api/jellenreviews`
+  - **Description**: Add a new jellen review to the inventory.
+  - **Request BODY**:
+    ```
+    {
+        "id": "1",
+        "rating": 3.5,
+        "title": "Schindler's List Review",
+        "author": "Ellen",
+        "wouldWatchAgain": "yes",
+        "genre": {
+            "id": "1"
+        },
+        "movies": [
+            {
+                "id": "1"
+            }
+        ]
+    }
+    ```
+  - **Response**: `201 Created` with the created jellen review object in the body.
+  - **Error**: `400 Bad Request` if input validation fails.
+
+- **GET** `/api/jellenreviews`
+  - **Description**: Retrieve a list of all jellen reviews in the inventory.
+  - **Response**: `200 OK` with an array of jellen review objects in the body.
+
+- **GET** `/api/jellenreviews/{id}`
+  - **Description**: Retrieve details of a specific jellen review.
+  - **Response**: `200 OK` with the jellen review object in the body.
+  - **Error**: `404 Not Found` if the jellen review does not exist.
+
+- **PUT** `/api/jellenreviews/{id}`
+  - **Description**: Update the details of an existing jellen review.
+  - **Request BODY**:
+    ```
+    {
+        "id": "1",
+        "rating": 3.5,
+        "title": "Schindler's List Review",
+        "author": "Ellen",
+        "wouldWatchAgain": "yes",
+        "genre": {
+            "id": "1"
+        },
+        "movies": [
+            {
+                "id": "1"
+            }
+        ]
+    }
+    ```
+  - **Response**: `200 OK` with the updated jellen review object in the body.
+  - **Error**: `400 Bad Request` if input validation fails; `404 Not Found` if the jellen review does not exist.
 
 
 ## UML Diagrams
