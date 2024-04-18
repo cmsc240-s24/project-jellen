@@ -57,8 +57,16 @@ class Personnel
          * @return crow::json::wvalue
         */
         crow::json::wvalue convertToJson();
+
     private:
+        /**
+         * @brief Personnel ID
+         */
         std::string personnelID;
+
+        /**
+         * @brief Personnel Name
+         */
         std::string personnelName;
 };
 

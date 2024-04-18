@@ -6,7 +6,7 @@
  * This file contains the declaration of the Jellen Review class along with its
  * member functions and variables.
  */
-#ifndef JELLEN_REVIEW_H
+#ifndef JELLENREVIEW_H
 #define JELLEN_REVIEW_H
 
 #include <string>
