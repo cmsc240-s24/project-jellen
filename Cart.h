@@ -75,7 +75,7 @@ private:
     /**
      * @brief Movies
      */
-    std::vector<Mvie> movies;
+    std::vector<Movie> movies;
 };
 
 #endif // CART_H
