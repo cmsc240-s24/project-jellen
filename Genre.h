@@ -1,6 +1,7 @@
 #ifndef GENRE_H
 #define GENRE_H
 
+#include <crow.h>
 #include <string>
 
 /**
@@ -9,7 +10,6 @@
  * This Genre class holds information about the genre of
  * the movie including its ID, genre.
  */
-
 class Genre
 {
 public:
@@ -19,35 +19,35 @@ public:
      */
     Genre() {}
 
-    Genre(crow::json::rvalue read);
+    Genre(crow::json::rvalue readValueJson);
 
     /**
      * @brief Get the Genre ID object
      *
-     * @return int
+     * @return string
      */
-    int getGenreID() const;
+    std::string getGenreID() const { return genreID; }
 
     /**
      * @brief Get the Genre object
      *
      * @return std::string
      */
-    std::string getGenre() const;
+    std::string getGenre() const { return genre; }
 
     /**
      * @brief Set the Genre ID object
      *
      * @param genreID
      */
-    void setGenreID(int genreID);
+    void setGenreID(std::string idParam) { genreID = idParam; }
 
     /**
      * @brief Set the Genre object
      *
      * @param genre
      */
-    void setGenre(std::string genre);
+    void setGenre(std::string genreParam) { genre = genreParam; }
 
     /**
      * @brief Convert the Genre object to JSON
