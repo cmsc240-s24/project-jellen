@@ -69,8 +69,14 @@ public:
     void updateFromJson(crow::json::rvalue readValueJson);
 
 private:
+    /**
+     * @brief Cart ID
+     */
     std::string cartID;
-    std::vector <Movie> movies;
+    /**
+     * @brief Movies
+     */
+    std::vector movies;
 };
 
 #endif // CART_H

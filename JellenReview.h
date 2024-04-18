@@ -10,7 +10,6 @@
 #define JELLEN_REVIEW_H
 
 #include <string>
-#include "Movie.h"
 
 /**
  * @class JellenReview
@@ -23,11 +22,13 @@ class JellenReview
 {
 public:
     /**
-     * @brief Constructs a new BankAccount object.
-     * @param owner the name of the owner of the bank account.
-     * @param initialBalance the initial balance of the bank account.
+     * @brief Constructs a new JellenReview object.
+     * @param jellenReviewID the id of the JellenReview.
+     * @param review the review of the movie.
+     * @param rating the rating of the movie.
+     * @param wouldWatchAgain if Jellen would watch the movie again.
      */
-    JellenReview(std::string id, std::string review, int rating, bool wouldWatchAgain);
+    JellenReview(std::string jellenReviewID, std::string review, int rating, bool wouldWatchAgain);
     
     /**
      * @brief Returns the id of JellenReview.
@@ -37,7 +38,7 @@ public:
 
      /**
      * @brief Sets the value of jellenReviewID.
-     * @param newRating the JellenReview ID.
+     * @param newID the JellenReview ID.
      */
     void setID(std::string newID) { jellenReviewID = newID; }
 
