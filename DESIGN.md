@@ -280,7 +280,7 @@ In the context of this API, {id} would typically be replaced by a unique identif
         "wouldWatchAgain": "yes",
         "genre": {
             "id": "1"
-        },
+        }, 
         "movies": [
             {
                 "id": "1"
