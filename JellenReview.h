@@ -7,7 +7,7 @@
  * member functions and variables.
  */
 #ifndef JELLENREVIEW_H
-#define JELLEN_REVIEW_H
+#define JELLENREVIEW_H
 
 #include <string>
 

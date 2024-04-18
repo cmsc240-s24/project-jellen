@@ -1,7 +1,6 @@
 #ifndef CART_H
 #define CART_H
 
-#include <crow.h>
 #include <string>
 #include <vector>
 
@@ -38,7 +37,7 @@ public:
      *
      * @return std::vector<Movies>
      */
-    std::vector<Movies> getMovies() const { return movies; }
+    std::vector<Movie> getMovies() const { return movies; }
 
     /**
      * @brief Set the Cart ID object
@@ -52,7 +51,7 @@ public:
      *
      * @param movies
      */
-    void setMovies(std::vector<Movies> moviesParam) { movies = moviesParam; }
+    void setMovies(std::vector<Movie> moviesParam) { movies = moviesParam; }
 
     /**
      * @brief Convert the Cart object to JSON
@@ -76,7 +75,7 @@ private:
     /**
      * @brief Movies
      */
-    std::vector movies;
+    std::vector<Mvie> movies;
 };
 
 #endif // CART_H
