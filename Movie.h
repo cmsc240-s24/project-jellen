@@ -12,6 +12,7 @@
 #include <string>
 #include "JellenReview.h"
 #include "Genre.h"
+#include "Person.h"
 
 /**
  * @class Movie
