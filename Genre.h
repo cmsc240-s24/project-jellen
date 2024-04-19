@@ -24,14 +24,14 @@ public:
     /**
      * @brief Get the Genre ID object
      *
-     * @return string
+     * @return string genreID
      */
     std::string getGenreID() const { return genreID; }
 
     /**
      * @brief Get the Genre object
      *
-     * @return std::string
+     * @return std::string genre
      */
     std::string getGenre() const { return genre; }
 
@@ -52,7 +52,7 @@ public:
     /**
      * @brief Convert the Genre object to JSON
      *
-     * @return crow::json::wvalue
+     * @return crow::json::wvalue JSON object
      */
     crow::json::wvalue convertToJson();
 

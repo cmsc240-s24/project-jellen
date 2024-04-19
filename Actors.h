@@ -63,7 +63,7 @@ class Actors
          * @param readValueJson
          */
         void updateFromJson(crow::json::rvalue readValueJson);
-        
+
     private:
         /**
          * @brief Actor ID
@@ -81,4 +81,4 @@ class Actors
         bool canImprov;
 };
 
-#endif
+#endif // ACTORS_H
