@@ -9,73 +9,112 @@
 #ifndef MOVIE_H
 #define MOVIE_H
 
+#include <crow.h>
 #include <string>
 #include "JellenReview.h"
 #include "Genre.h"
-#include "Person.h"
+#include "Personnel.h"
 
 /**
  * @class Movie
- * @brief A class that offers Movie activity.
+ * @brief Movie class
  *
- * This class can perform actions such as...
+ * This Movie class holds information about the movie
+ * including its ID, title, length, genre, personnel, and movie poster.
  */
 class Movie
 {
-public:
-    /**
-     * @brief Constructs a new Movie object.
-     * @param 
-     * @param 
-     */
-    JellenReview(std::string id, std::string review, int rating, bool wouldWatchAgain);
-    
-    /**
-     * @brief Returns the id of JellenReview.
-     * @return id of JellenReview.
-     */
-    std::string getID() const { return jellenReviewID; }
+    public:
+        /**
+         * @brief Constructs a new Movie object.
+         * @param id the id of the movie
+         * @param title the title of the movie
+         * @param length the length of the movie
+         * @param genre the genre of the movie
+         * @param personnelList the personnel involved in the creation of the movie
+         * @param poster the link to the poster of the movie
+         */
+        Movie(std::string id, std::string title, double length, Genre genre, std::vector<Personnel> personnelList, std::string poster);
+        
+        /**
+         * @brief Returns the id of Movie.
+         * @return id of Movie.
+         */
+        std::string getID() const { return movieID; }
 
-     /**
-     * @brief Sets the value of jellenReviewID.
-     * @param newRating the JellenReview ID.
-     */
-    void setID(std::string newID) { jellenReviewID = newID; }
+        /**
+         * @brief Sets the value of movieID.
+         * @param newID the Movie ID.
+         */
+        void setID(std::string newID) { movieID = newID; }
 
-    /**
-     * @brief Returns Jellen's rating of the movie.
-     * @return Jellen's rating of the movie.
-     */
-    int getRating() { return rating; }
+        /**
+         * @brief Returns the title of the movie.
+         * @return title of movie.
+         */
+        std::string getTitle() { return movieTitle; }
 
-    /**
-     * @brief Sets the value of rating.
-     * @param newRating Jellen's rating of movie.
-     */
-    void setRating(int newRating) { rating = newRating; }
+        /**
+         * @brief Sets the title of the movie.
+         * @param newTitle title of movie.
+         */
+        void setTitle(std::string newTitle) { movieTitle = newTitle; }
 
-    // !!!
-    // do get movie & set movie once that .h file has been made
+        /**
+         * @brief Returns the length of the movie.
+         * @return length of movie.
+         */
+        double getLength() { return movieLength; }
 
-    /**
-     * @brief Returns the value of if Jellen would rewatch the movie.
-     * @return true if Jellen would watch the movie again, false if not.
-     */
-    bool getWouldWatchAgain() { return wouldWatchAgain; }
+        /**
+         * @brief Sets the length of the movie.
+         * @param newLength length of movie.
+         */
+        void setLength(std::string newLength) { movieLength = newLength; }
 
-    /**
-     * @brief Sets the value of if Jellen would rewatch the movie.
-     * @param newWouldWatchAgain if Jellen would watch the movie again.
-     */
-    void setWouldWatchAgain(bool newWouldWatchAgain) { wouldWatchAgain = newWouldWatchAgain;}
+        /**
+         * @brief Returns the Genre of the movie.
+         * @return Genre of movie.
+         */
+        Genre getGenre() { return movieGenre; }
 
-private: 
-    std::string movieID;
-    std::string title;
-    double length;
-    Genre movieGenre;
-    std::vector<Director> directors;
-    std::string linkToMoviePoster;
+        /**
+         * @brief Sets the Genre of the movie.
+         * @param newGenre genre of movie.
+         */
+        void setGenre(Genre newGenre) { movieGenre = newGenre; }
+
+        /**
+         * @brief Returns the personnel of the movie.
+         * @return personnel of movie.
+         */
+        std::vector<Personnel> getPersonnel() { return moviePersonnel; }
+
+        /**
+         * @brief Sets the personnel of the movie.
+         * @param newPersonnel personnel of movie.
+         */
+        void setPersonnel(std::vector<Personnel> newPersonnel) { moviePersonnel = newPersonnel; }
+
+        /**
+         * @brief Convert the Movie object to JSON
+         * @return crow::json::wvalue
+         */
+        updateFromJson(crow::json::rvalue readValueJson);
+        
+        /**
+         * @brief Convert the Movie object to JSON
+         * @return crow::json::wvalue
+         */
+        crow::json::wvalue convertToJson();
+
+    private: 
+        std::string movieID;
+        std::string movieTitle;
+        double movieLength;
+        Genre movieGenre;
+        std::vector<Personnel> moviePersonnel;
+        std::string linkToMoviePoster;
 };
 
 #endif // MOVIE_H

@@ -1,38 +1,57 @@
-#ifndef DIRECTORS_H
-#define DIRECTORS_H
+// Director.h
+/**
+ * @file Director.h
+ * @brief Header file for the Director class.
+ *
+ * This file contains the declaration of the Director class along with its
+ * member functions and variables.
+ */
 
-class Directors 
+#ifndef DIRECTOR_H
+#define DIRECTOR_H
+
+#include <crow.h>
+#include <string>
+
+/**
+ * @class Director
+ * @brief Director class
+ *
+ * This Director class holds information about the director of
+ * the movie including their ID, name, and number of films made.
+ * */
+class Director 
 {
     public:
         /**
-         * @brief Constructs a new Directors object.
-         * @param id the Directors ID.
-         * @param name the Directors name.
+         * @brief Constructs a new Director object.
+         * @param id the Director ID.
+         * @param name the Director name.
          * @param filmsMade the number of films made.
          */
-        Directors(std::string id, std::string name, int filmsMade);
+        Director(std::string id, std::string name, int filmsMade);
 
         /**
-         * @brief Returns the id of Directors.
-         * @return id of Directors.
+         * @brief Returns the id of Director.
+         * @return id of Director.
          */
         std::string getID() const { return directorID; }
 
         /**
          * @brief Sets the value of directorID.
-         * @param newID the Directors ID.
+         * @param newID the Director ID.
          */
         void setID(std::string newID) { directorID = newID; }
 
         /**
-         * @brief Returns the name of Directors.
-         * @return name of Directors.
+         * @brief Returns the name of Director.
+         * @return name of Director.
          */
         std::string getName() const { return directorName; }
 
         /**
          * @brief Sets the value of directorName.
-         * @param newName the Directors name.
+         * @param newName the Director name.
          */
         void setName(std::string newName) { directorName = newName; }
 
@@ -49,13 +68,13 @@ class Directors
         void setFilmsMade(int newFilmsMade) { numberOfFilmsMade = newFilmsMade; }
 
         /**
-         * @brief Convert the Directors object to JSON
+         * @brief Convert the Director object to JSON
          * @return crow::json::wvalue
          */ 
         crow::json::wvalue convertToJson();
 
         /**
-         * @brief Update the Directors object from JSON
+         * @brief Update the Director object from JSON
          * @param readValueJson the JSON object to update from.
          */
         void updateFromJson(crow::json::rvalue readValueJson);
@@ -77,4 +96,4 @@ class Directors
         int numberOfFilmsMade;
 };
 
-#endif // DIRECTORS_H
+#endif // DIRECTOR_H
