@@ -45,16 +45,28 @@ class JellenReview
         void setID(std::string newID) { jellenReviewID = newID; }
 
         /**
+         * @brief Returns Jellen's review of the movie.
+         * @return Jellen's review of the movie.
+         */
+        std::string getReview() { return reviewString; }
+
+        /**
+         * @brief Sets the value of review.
+         * @param newReview Jellen's review of movie.
+         */
+        void setRating(int newReview) { reviewString = newReview; }
+
+        /**
          * @brief Returns Jellen's rating of the movie.
          * @return Jellen's rating of the movie.
          */
-        int getRating() { return rating; }
+        int getRating() { return jellenRating; }
 
         /**
          * @brief Sets the value of rating.
          * @param newRating Jellen's rating of movie.
          */
-        void setRating(int newRating) { rating = newRating; }
+        void setRating(int newRating) { jellenRating = newRating; }
 
         // !!!
         // do get movie & set movie once that .h file has been made
