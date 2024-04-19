@@ -97,6 +97,18 @@ class Movie
         void setPersonnel(std::vector<Personnel> newPersonnel) { moviePersonnel = newPersonnel; }
 
         /**
+         * @brief Returns the link to the poster of the movie.
+         * @return movie poster.
+         */
+        std::string getPoster() { return linkToMoviePoster; }
+
+        /**
+         * @brief Sets the link to the poster of the movie.
+         * @param newPoster new poster link for movie.
+         */
+        void setTitle(std::string newPoster) { linkToMoviePoster = newPoster; }
+
+        /**
          * @brief Convert the Movie object to JSON
          * @return crow::json::wvalue
          */
