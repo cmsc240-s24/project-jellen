@@ -29,7 +29,7 @@ public:
      * @param id the id of the cart
      * @param moviesList the movies in the cart
      */
-    Cart(std::string id, std::vector<Movie> moviesList) {}
+    Cart(std::string id, std::vector<Movie> moviesList);
 
     /**
      * @brief Construct a new Cart object

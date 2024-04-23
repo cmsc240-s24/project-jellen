@@ -121,11 +121,34 @@ class Movie
         crow::json::wvalue convertToJson();
 
     private: 
+        /**
+         * @brief movieID
+         */
         std::string movieID;
+
+        /**
+         * @brief movieTitle
+         */
         std::string movieTitle;
+
+        /**
+         * @brief movieLength
+         */
         double movieLength;
+
+        /**
+         * @brief movieGenre
+         */
         Genre movieGenre;
+
+        /**
+         * @brief moviePersonnel
+         */
         std::vector<Personnel> moviePersonnel;
+
+        /**
+         * @brief linkToMoviePoster
+        */
         std::string linkToMoviePoster;
 };
 

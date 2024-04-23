@@ -12,7 +12,7 @@ Genre::Genre(json::rvalue readValueJson)
 json::wvalue Genre::convertToJson() 
 {
     json::wvalue writeJson;
-    writeJson["id"] = id;
+    writeJson["genreID"] = genreID;
     writeJson["genre"] = genre;
     return writeJson;
 }
@@ -20,6 +20,6 @@ json::wvalue Genre::convertToJson()
 // Update from JSON
 void Genre::updateFromJson(json::rvalue readValueJson) 
 {
-    id = readValueJson["id"].s();
+    genreID = readValueJson["genreID"].s();
     genre = readValueJson["genre"].s();
 }
