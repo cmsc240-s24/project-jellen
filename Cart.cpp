@@ -3,6 +3,8 @@
 using namespace std;
 using namespace crow;
 
+Cart(std::string id, std::vector<Movie> moviesList);
+
 Cart::Cart(json::rvalue readValueJson)
 {
     updateFromJson(readValueJson);
