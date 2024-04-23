@@ -21,6 +21,7 @@ json::wvalue Movie::convertToJson()
     writeJson["length"] = movieLength;
     writeJson["genre"] = movieGenre;
     writeJson["personnel"] = moviePersonnel;
+    writeJson["review"] = movieReview;
     writeJson["linktoMoviePoster"] = linktoMoviePoster;
     
     // Convert artists to json (Save only the ids)

@@ -164,6 +164,11 @@ class Movie
         std::vector<Personnel> moviePersonnel;
 
         /**
+         * @brief movieReview
+         */
+        JellenReview movieReview;
+
+        /**
          * @brief linkToMoviePoster
         */
         std::string linkToMoviePoster;
