@@ -24,12 +24,15 @@ class Director : public Personnel
 {
     public:
         /**
-         * @brief Constructs a new Director object.
-         * @param id the Director ID.
-         * @param name the Director name.
-         * @param filmsMade the number of films made.
+         * @brief default constructor: Director
          */
-        Director(std::string id, std::string name, int filmsMade);
+        Director() {};
+        
+        /**
+         * @brief Construct a new Director object
+         * @param readValueJson
+         */
+        Director(crow::json::rvalue readValueJson);
 
         /**
          * @brief Returns the id of Director.

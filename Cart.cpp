@@ -14,7 +14,7 @@ Cart::Cart(json::rvalue readValueJson)
 json::wvalue Cart::convertToJson() 
 {
     json::wvalue writeJson;
-    writeJson["cartID"] = cartID;
+    writeJson["id"] = cartID;
     writeJson["movies"] = movies;
     return writeJson;
 }
@@ -22,6 +22,6 @@ json::wvalue Cart::convertToJson()
 // Update from JSON
 void Genre::updateFromJson(json::rvalue readValueJson) 
 {
-    cartID = readValueJson["cartID"].s();
+    cartID = readValueJson["id"].s();
     movies = readValueJson["movies"].s();
 }

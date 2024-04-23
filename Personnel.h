@@ -23,12 +23,16 @@
 class Personnel 
 {
     public:
-        /**
-         * @brief Constructs a new Personnel object.
-         * @param id the id of the Personnel.
-         * @param name the name of the Personnel.
+       /**
+         * @brief default constructor: Personnel
          */
-        Personnel(std::string id, std::string name);
+        Personnel() {};
+        
+        /**
+         * @brief Construct a new Personnel object
+         * @param readValueJson
+         */
+        Personnel(crow::json::rvalue readValueJson);
         
         /**
          * @brief Returns the id of Personnel.

@@ -24,9 +24,7 @@ class Genre
 {
     public:
         /**
-         * @brief Construct a new Genre object
-         * @param id the id of the genre
-         * @param genreString the genre of the movie
+         * @brief default constructor: Genre
          */
         Genre() {};
         

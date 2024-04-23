@@ -24,13 +24,15 @@ class JellenReview
 {
     public:
         /**
-         * @brief Constructs a new JellenReview object.
-         * @param id the id of the JellenReview.
-         * @param review the review of the movie.
-         * @param rating the rating of the movie.
-         * @param again if Jellen would watch the movie again.
+         * @brief default constructor: JellenReview
          */
-        JellenReview(std::string id, std::string review, int rating, bool again);
+        JellenReview() {};
+        
+        /**
+         * @brief Construct a new JellenReview object
+         * @param readValueJson
+         */
+        JellenReview(crow::json::rvalue readValueJson);
         
         /**
          * @brief Returns the id of JellenReview.

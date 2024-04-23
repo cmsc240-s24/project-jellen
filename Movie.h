@@ -26,15 +26,15 @@ class Movie
 {
     public:
         /**
-         * @brief Constructs a new Movie object.
-         * @param id the id of the movie
-         * @param title the title of the movie
-         * @param length the length of the movie
-         * @param genre the genre of the movie
-         * @param personnelList the personnel involved in the creation of the movie
-         * @param poster the link to the poster of the movie
+         * @brief default constructor: Movie
          */
-        Movie(std::string id, std::string title, double length, Genre genre, std::vector<Personnel> personnelList, std::string poster);
+        Movie() {};
+        
+        /**
+         * @brief Construct a new Movie object
+         * @param readValueJson
+         */
+        Movie(crow::json::rvalue readValueJson);
         
         /**
          * @brief Returns the id of Movie.

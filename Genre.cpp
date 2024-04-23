@@ -3,7 +3,8 @@
 using namespace std;
 using namespace crow;
 
-Genre::Genre(json::rvalue readValueJson)
+
+Genre::Genre(json::rvalue readValueJson)  
 {
     updateFromJson(readValueJson);
 }
@@ -12,7 +13,7 @@ Genre::Genre(json::rvalue readValueJson)
 json::wvalue Genre::convertToJson() 
 {
     json::wvalue writeJson;
-    writeJson["genreID"] = genreID;
+    writeJson["id"] = genreID;
     writeJson["genre"] = genre;
     return writeJson;
 }
@@ -20,6 +21,6 @@ json::wvalue Genre::convertToJson()
 // Update from JSON
 void Genre::updateFromJson(json::rvalue readValueJson) 
 {
-    genreID = readValueJson["genreID"].s();
+    genreID = readValueJson["id"].s();
     genre = readValueJson["genre"].s();
 }
