@@ -7,8 +7,6 @@
 using namespace std;  
 using namespace crow;  
 
-
-
 TEST_CASE("Testing Director Class") 
 {
     // Testing Director constructor
@@ -46,13 +44,13 @@ TEST_CASE("Testing Director Class")
         Director testDirector(json::load(R"({"director":"Wes Anderson","id":"1"})"));
 
         // Create the update json.
-        json::rvalue updateJson = json::load(R"({"director":"Animation","id":"2"})");
+        json::rvalue updateJson = json::load(R"({"director":"Kenny Ortega","id":"2"})");
 
         // Update the Director with the updateFromJson method. 
         testDirector.updateFromJson(updateJson);
 
         // Check the updated values.
         CHECK(testDirector.getDirectorID() == "2");
-        CHECK(testDirector.getDirector() == "Animation");
+        CHECK(testDirector.getDirector() == "Kenny Ortega");
     }
 }
