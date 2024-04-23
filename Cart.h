@@ -76,10 +76,17 @@ class Cart
          * @brief Cart ID
          */
         std::string cartID;
+
         /**
          * @brief Movies
          */
         std::vector<Movie> movies;
+
+        /**
+         * @brief amount
+         */
+        double amount;
+
 };
 
 #endif // CART_H

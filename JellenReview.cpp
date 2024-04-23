@@ -3,15 +3,6 @@
 using namespace std;
 using namespace crow;
 
-
-JellenReview(std::string id, std::string review, int rating, bool again)
-{
-    jellenReviewID = id;
-    reviewString = review;
-    jellenRating = rating;
-    wouldWatchAgain = again;
-}
-
 JellenReview::JellenReview(json::rvalue readValueJson)
 {
     updateFromJson(readValueJson);
