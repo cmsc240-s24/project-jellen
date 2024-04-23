@@ -53,7 +53,6 @@ TEST_CASE("Testing Genre Class")
 
         // Check the updated values.
         CHECK(testGenre.getGenreID() == "2");
-        
         CHECK(testGenre.getGenre() == "Animation");
     }
 }
