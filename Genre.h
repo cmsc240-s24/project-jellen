@@ -28,7 +28,13 @@ class Genre
          * @param id the id of the genre
          * @param genreString the genre of the movie
          */
-        Genre(std::string id, std::string genreString);
+        Genre() {};
+        
+        /**
+         * @brief Construct a new Genre object
+         * @param readValueJson
+         */
+        Genre(crow::json::rvalue readValueJson);
 
         /**
          * @brief Get the Genre ID object

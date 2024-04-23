@@ -3,6 +3,15 @@
 using namespace std;
 using namespace crow;
 
+
+JellenReview(std::string id, std::string review, int rating, bool again)
+{
+    jellenReviewID = id;
+    reviewString = review;
+    jellenRating = rating;
+    wouldWatchAgain = again;
+}
+
 JellenReview::JellenReview(json::rvalue readValueJson)
 {
     updateFromJson(readValueJson);
@@ -23,7 +32,7 @@ json::wvalue JellenReview::convertToJson()
 void JellenReview::updateFromJson(json::rvalue readValueJson) 
 {
     jellenReviewID = readValueJson["id"].s();
-    reviewString = readValueJson["genre"].s();
-    jellenRating = readValueJson["id"].s();
-    wouldWatc = readValueJson["genre"].s();
+    reviewString = readValueJson["review"].s();
+    jellenRating = readValueJson["rating"].s();
+    wouldWatchAgain = readValueJson["would watch again"].s();
 }

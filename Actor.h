@@ -21,7 +21,7 @@
  * This Actor class holds information about the actors of
  * the movie including their ID, name, and if they can improvise or not.
  * */
-class Actor
+class Actor : public Personnel
 {
     public:
         /**

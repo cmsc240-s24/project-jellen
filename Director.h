@@ -20,7 +20,7 @@
  * This Director class holds information about the director of
  * the movie including their ID, name, and number of films made.
  * */
-class Director 
+class Director : public Personnel
 {
     public:
         /**

@@ -97,9 +97,24 @@ class JellenReview
    
 
     private: 
+        /**
+         * @brief Jellen Review ID
+         */
         std::string jellenReviewID;
+
+        /**
+         * @brief review
+         */
         std::string reviewString;
+
+        /**
+         * @brief rating
+         */
         int jellenRating;
+
+        /**
+         * @brief would watch again
+         */
         bool wouldWatchAgain;
 };
 

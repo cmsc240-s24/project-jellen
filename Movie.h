@@ -64,6 +64,18 @@ class Movie
          * @brief Returns the length of the movie.
          * @return length of movie.
          */
+        double getCost() { return movieLength; }
+
+        /**
+         * @brief Sets the length of the movie.
+         * @param newLength length of movie.
+         */
+        void set(std::string newLength) { movieLength = newLength; }
+
+        /**
+         * @brief Returns the length of the movie.
+         * @return length of movie.
+         */
         double getLength() { return movieLength; }
 
         /**
@@ -130,6 +142,11 @@ class Movie
          * @brief movieTitle
          */
         std::string movieTitle;
+
+        /**
+         * @brief movieCost
+         */
+        double movieCost;
 
         /**
          * @brief movieLength
