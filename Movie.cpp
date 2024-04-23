@@ -19,39 +19,27 @@ json::wvalue Movie::convertToJson()
     writeJson["title"] = movieTitle;
     writeJson["cost"] = movieCost;
     writeJson["length"] = movieLength;
-    writeJson["genre"] = movieGenre;
-    writeJson["personnel"] = moviePersonnel;
-    writeJson["review"] = movieReview;
+    writeJson["genre"]["id"] = movieGenre.getGenreID();
+    writeJson["review"]["id"] = movieReview.getID();
     writeJson["linktoMoviePoster"] = linktoMoviePoster;
     
-    // Convert artists to json (Save only the ids)
+    // Convert personnel to json (Save only the ids)
     int index = 0;
-    for (Artist artist : artists) 
+    for (Personnel person : moviePersonnel) 
     {
-        writeJson["artists"][index]["id"] = artist.getId();
+        writeJson["personnel"][index]["id"] = person.getID();
     }
-
-    // // If you want the full json for each artist to be included:
-    // for (Artist artist : artists) 
-    // {
-    //     writeJson["artists"] = artist.convertToJson();
-    // }
-
-    // Convert genre to json (Save only the id)
-    writeJson["genre"]["id"] = genre.getId();
- 
     return writeJson;
 }
 
 // Update from JSON
 void Album::updateFromJson(json::rvalue readValueJson) 
 {
-    id = readValueJson["id"].s();
-    title = readValueJson["title"].s();
-    cost = readValueJson["cost"].d();
-    mediaType = readValueJson["mediaType"].s();
-    linkToCoverArt = readValueJson["linkToCoverArt"].s();
-    
+    movieID = readValueJson["id"].s();
+    movieTitle = readValueJson["title"].s();
+    movieCost = readValueJson["cost"].s();
+    movieLength = readValueJson["length"].s();
+    linktoMoviePoster = readValueJson["linkToMoviePoster"].s();
     // Setting artists
     for (json::rvalue artistReadValueJson: readValueJson["artists"])
     {
