@@ -188,8 +188,8 @@ response GenericAPI<T>::deleteResource(string id)
 }
 
 // Explicit template instantiation
-template class GenericAPI<JellenReview>;
 template class GenericAPI<Genre>;
-template class GenericAPI<Personnel>;
-template class GenericAPI<Directors>;
-template class GenericAPI<Actors>;
+template class GenericAPI<Actor>;
+template class GenericAPI<Director>;
+template class GenericAPI<JellenReview>;
+template class GenericAPI<Cart>;

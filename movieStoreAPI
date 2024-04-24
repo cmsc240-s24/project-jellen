@@ -8,7 +8,6 @@
 #include "GenericAPI.h"
 #include "Genre.h"
 #include "JellenReview.h"
-// #include "Movie.h"
 #include "Personnel.h"
 #include "persistence.h"
 
@@ -21,7 +20,6 @@ map<std::string, Cart> cartsMap = loadFromFile<Cart>("carts.json");
 map<std::string, Director> directorsMap = loadFromFile<Director>("directors.json");
 map<std::string, Genre> genresMap = loadFromFile<Genre>("genres.json");
 map<std::string, JellenReview> jellenReviewsMap = loadFromFile<JellenReview>("jellenreviews.json");
-// map<std::string, Movie> moviesMap = loadFromFile<Movie>("genres.json");
 map<std::string, Personnel> personnelMap = loadFromFile<P>("genres.json");
 
 int main()
