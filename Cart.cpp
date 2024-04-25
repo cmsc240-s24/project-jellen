@@ -2,6 +2,7 @@
 
 using namespace std;
 using namespace crow;
+extern map<std::string, Movie> moviesMap;
 
 Cart::Cart(json::rvalue readValueJson)
 {
@@ -13,8 +14,15 @@ json::wvalue Cart::convertToJson()
 {
     json::wvalue writeJson;
     writeJson["id"] = cartID;
-    writeJson["movies"] = movies;
+
+    int index = 0;
+    for (Movie movie : movies) 
+    {
+        writeJson["movies"][index]["id"] = movie.getId();
+    }
+   
     writeJson["amount owed"] = amount;
+    
     return writeJson;
 }
 
@@ -22,6 +30,12 @@ json::wvalue Cart::convertToJson()
 void Cart::updateFromJson(json::rvalue readValueJson) 
 {
     cartID = readValueJson["id"].s();
-    movies = readValueJson["movies"].s();
-    amount = readValueJson["amount owed"].s();
+
+    // Setting movies
+    for (json::rvalue movieReadValueJson: readValueJson["movies"])
+    {
+        movies.push_back(moviesMap.at(movieReadValueJson["id"].s()));
+    }
+    
+    amount = readValueJson["amount owed"].();
 }
