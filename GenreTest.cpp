@@ -18,7 +18,7 @@ TEST_CASE("Testing Genre Class")
         Genre testGenre(json::load(R"({"genre":"Romance","id":"1"})"));
 
         // Check that the constructor properly loaded the values.
-        CHECK(testGenre.getGenreID() == "1");
+        CHECK(testGenre.getID() == "1");
         CHECK(testGenre.getGenre() == "Romance");
     }
 
@@ -52,7 +52,7 @@ TEST_CASE("Testing Genre Class")
         testGenre.updateFromJson(updateJson);
 
         // Check the updated values.
-        CHECK(testGenre.getGenreID() == "2");
+        CHECK(testGenre.getID() == "2");
         CHECK(testGenre.getGenre() == "Animation");
     }
 }
