@@ -43,14 +43,18 @@ DirectorTest: DirectorTest.cpp Director.cpp Director.h Personnel.o
 	g++ -lpthread DirectorTest.cpp Director.o Personnel.o -o DirectorTest 	
 
 ActorTest: ActorTest.cpp Actor.cpp Actor.h Personnel.o
-	g++ -lpthread ActorTest.cpp Actor.o Personnel.o -o ActorTest 	
+	g++ -lpthread ActorTest.cpp Actor.o Personnel.o -o ActorTest
 
-run-unit-tests: GenericAPITest persistenceTest GenreTest DirectorTest ActorTest
+JellenReviewTest: JellenReviewTest.cpp JellenReview.cpp JellenReview.h
+	g++ -lpthread JellenReviewTest.cpp JellenReview.o -o JellenReviewTest 
+
+run-unit-tests: GenericAPITest persistenceTest GenreTest DirectorTest ActorTest JellenReviewTest
 	./GenericAPITest    ;\
 	./persistenceTest	;\
 	./GenreTest			;\
 	./DirectorTest		;\
 	./ActorTest			:\
+	./JellenReviewTest  ;\
 
 static-analysis:
 	cppcheck *.cpp
