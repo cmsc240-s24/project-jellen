@@ -12,14 +12,14 @@ Personnel::Personnel(json::rvalue readValueJson)
 json::wvalue Personnel::convertToJson() 
 {
     json::wvalue writeJson;
-    writeJson["id"] = personnelID;
-    writeJson["name"] = personnelName;
+    writeJson["id"] = id;
+    writeJson["name"] = name;
     return writeJson;
 }
 
 // Update from JSON
 void Personnel::updateFromJson(json::rvalue readValueJson) 
 {
-    personnelID = readValueJson["id"].s();
-    personnelName = readValueJson["name"].s();
+    id = readValueJson["id"].s();
+    name = readValueJson["name"].s();
 }
