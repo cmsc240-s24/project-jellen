@@ -36,10 +36,11 @@ TEST_CASE("Creating a new Actor resource")
 
     // Check the results
     CHECK(res.code == 201); // Check that the response code is 201 Created
-    //CHECK(res.body == req.body); // Validate the reponse body
-    //CHECK(GenericAPI<Actor>::resourceMap.size() == 1); // Ensure the resource was added to the map
-    //CHECK(GenericAPI<Actor>::resourceMap.at("1").getID() == "1"); // Validate the resource content
-    //CHECK(GenericAPI<Actor>::resourceMap.at("1").getName() == "Zac Efron"); // Validate the resource content
+    CHECK(res.body == req.body); // Validate the reponse body
+    CHECK(GenericAPI<Actor>::resourceMap.size() == 1); // Ensure the resource was added to the map
+    CHECK(GenericAPI<Actor>::resourceMap.at("1").getID() == "1"); // Validate the resource content
+    CHECK(GenericAPI<Actor>::resourceMap.at("1").getName() == "Zac Efron"); // Validate the resource content
+    CHECK(GenericAPI<Actor>::resourceMap.at("1").getImprov() == true); // Validate the resource content
 }
 
 TEST_CASE("Reading an Actor resource") 
