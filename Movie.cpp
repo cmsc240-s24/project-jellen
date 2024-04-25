@@ -4,7 +4,8 @@ using namespace std;
 using namespace crow;
 
 extern map<std::string, Genre> genresMap;
-extern map<std::string, Artist> artistsMap;
+extern map<std::string, JellenReview> reviewsMap;
+extern map<std::string, Personnel> personnelMap;
 
 Movie::Movie(json::rvalue readValueJson)  
 {
@@ -27,26 +28,32 @@ json::wvalue Movie::convertToJson()
     {
         writeJson["personnel"][index]["id"] = person.getID();
     }
-    writeJson["genre"]["id"] = movieGenre.getGenreID();
+    writeJson["genre"]["id"] = movieGenre.getID();
     writeJson["review"]["id"] = movieReview.getID();
+
     return writeJson;
 }
 
 // Update from JSON
-void Album::updateFromJson(json::rvalue readValueJson) 
+void Movie::updateFromJson(json::rvalue readValueJson) 
 {
     movieID = readValueJson["id"].s();
     movieTitle = readValueJson["title"].s();
     movieCost = readValueJson["cost"].s();
     movieLength = readValueJson["length"].s();
     linktoMoviePoster = readValueJson["linkToMoviePoster"].s();
-    // Setting artists
-    for (json::rvalue artistReadValueJson: readValueJson["artists"])
+
+    // Setting Personnel
+    for (json::rvalue personnelReadValueJson: readValueJson["personnel"])
     {
-        artists.push_back(artistsMap.at(artistReadValueJson["id"].s()));
+        moviePersonnel.push_back(personnelMap.at(personnelReadValueJson["id"].s()));
     }
 
-    // Setting genre
+    // Setting Genre
     json::rvalue genreReadValueJson = readValueJson["genre"];
     genre = genresMap.at(genreReadValueJson["id"].s());
+
+    // Setting JellenReview
+    json::rvalue reviewReadValueJson = readValueJson["review"];
+    review = reviewsMap.at(reviewReadValueJson["id"].s());
 }
