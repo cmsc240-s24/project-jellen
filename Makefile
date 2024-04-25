@@ -19,7 +19,7 @@ Movie.o: Movie.cpp Movie.h Genre.h JellenReview.h Personnel.h
 	g++ -Wall -c Movie.cpp 
 
 Personnel.o: Personnel.cpp Personnel.h
-	g++ -Wall -c Genre.cpp
+	g++ -Wall -c Personnel.cpp
 
 Actor.o: Actor.cpp Actor.h Personnel.h
 	g++ -Wall -c Actor.cpp
