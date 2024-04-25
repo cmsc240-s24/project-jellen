@@ -60,7 +60,7 @@ class Actor : public Personnel
          * @brief Returns the value of if the actor can improv.
          * @return true if the actor can improv, false if not.
          */
-        bool getImprov() { return canImprov; }
+        bool getImprov() const { return canImprov; }
 
         /**
          * @brief Sets the value of if the actor can improv.

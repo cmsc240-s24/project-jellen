@@ -19,8 +19,6 @@ json::wvalue Movie::convertToJson()
     writeJson["title"] = movieTitle;
     writeJson["cost"] = movieCost;
     writeJson["length"] = movieLength;
-    writeJson["genre"]["id"] = movieGenre.getGenreID();
-    writeJson["review"]["id"] = movieReview.getID();
     writeJson["linktoMoviePoster"] = linktoMoviePoster;
     
     // Convert personnel to json (Save only the ids)
@@ -29,6 +27,8 @@ json::wvalue Movie::convertToJson()
     {
         writeJson["personnel"][index]["id"] = person.getID();
     }
+    writeJson["genre"]["id"] = movieGenre.getGenreID();
+    writeJson["review"]["id"] = movieReview.getID();
     return writeJson;
 }
 

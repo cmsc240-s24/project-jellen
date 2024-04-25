@@ -39,7 +39,7 @@ class Cart
          * @brief Get the Cart ID object
          * @return std::string
          */
-        std::string getCartID() const { return cartID; }
+        std::string getID() const { return cartID; }
 
         /**
          * @brief Get the Movies object
@@ -51,7 +51,7 @@ class Cart
          * @brief Set the Cart ID object
          * @param cartID
         */
-        void setCartID(std::string idParam) { cartID = idParam; }
+        void setID(std::string idParam) { cartID = idParam; }
 
         /**
          * @brief Set the Movies object

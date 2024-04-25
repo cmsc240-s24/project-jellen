@@ -52,7 +52,7 @@ class Movie
          * @brief Returns the title of the movie.
          * @return title of movie.
          */
-        std::string getTitle() { return movieTitle; }
+        std::string getTitle() const { return movieTitle; }
 
         /**
          * @brief Sets the title of the movie.
@@ -64,7 +64,7 @@ class Movie
          * @brief Returns the length of the movie.
          * @return length of movie.
          */
-        double getCost() { return movieLength; }
+        double getCost() const { return movieLength; }
 
         /**
          * @brief Sets the length of the movie.
@@ -76,7 +76,7 @@ class Movie
          * @brief Returns the length of the movie.
          * @return length of movie.
          */
-        double getLength() { return movieLength; }
+        double getLength() const { return movieLength; }
 
         /**
          * @brief Sets the length of the movie.
@@ -88,7 +88,7 @@ class Movie
          * @brief Returns the Genre of the movie.
          * @return Genre of movie.
          */
-        Genre getGenre() { return movieGenre; }
+        Genre getGenre() const { return movieGenre; }
 
         /**
          * @brief Sets the Genre of the movie.
@@ -100,7 +100,7 @@ class Movie
          * @brief Returns the personnel of the movie.
          * @return personnel of movie.
          */
-        std::vector<Personnel> getPersonnel() { return moviePersonnel; }
+        std::vector<Personnel> getPersonnel() const { return moviePersonnel; }
 
         /**
          * @brief Sets the personnel of the movie.
@@ -112,7 +112,7 @@ class Movie
          * @brief Returns the link to the poster of the movie.
          * @return movie poster.
          */
-        std::string getPoster() { return linkToMoviePoster; }
+        std::string getPoster() const { return linkToMoviePoster; }
 
         /**
          * @brief Sets the link to the poster of the movie.

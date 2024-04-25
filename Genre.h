@@ -38,7 +38,7 @@ class Genre
          * @brief Get the Genre ID object
          * @return string genreID
          */
-        std::string getGenreID() const { return genreID; }
+        std::string getID() const { return genreID; }
 
         /**
          * @brief Get the Genre object
@@ -50,7 +50,7 @@ class Genre
          * @brief Set the Genre ID object
          * @param genreID
          */
-        void setGenreID(std::string idParam) { genreID = idParam; }
+        void setID(std::string idParam) { genreID = idParam; }
 
         /**
          * @brief Set the Genre object

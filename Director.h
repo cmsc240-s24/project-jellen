@@ -62,7 +62,7 @@ class Director : public Personnel
          * @brief Returns the number of films made by the director.
          * @return number of films made by the director.
          */
-        int getFilmsMade() { return numberOfFilmsMade; }
+        int getFilmsMade() const { return numberOfFilmsMade; }
 
         /**
          * @brief Sets the value of the number of films made by the director.

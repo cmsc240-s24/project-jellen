@@ -50,7 +50,7 @@ class JellenReview
          * @brief Returns Jellen's review of the movie.
          * @return Jellen's review of the movie.
          */
-        std::string getReview() { return reviewString; }
+        std::string getReview() const { return reviewString; }
 
         /**
          * @brief Sets the value of review.
@@ -62,7 +62,7 @@ class JellenReview
          * @brief Returns Jellen's rating of the movie.
          * @return Jellen's rating of the movie.
          */
-        int getRating() { return jellenRating; }
+        int getRating() const { return jellenRating; }
 
         /**
          * @brief Sets the value of rating.
@@ -77,7 +77,7 @@ class JellenReview
          * @brief Returns the value of if Jellen would rewatch the movie.
          * @return true if Jellen would watch the movie again, false if not.
          */
-        bool getWouldWatchAgain() { return wouldWatchAgain; }
+        bool getWouldWatchAgain() const { return wouldWatchAgain; }
 
         /**
          * @brief Sets the value of if Jellen would rewatch the movie.
