@@ -23,5 +23,5 @@ void Actor::updateFromJson(json::rvalue readValueJson)
 {
     actorID = readValueJson["id"].s();
     actorName = readValueJson["name"].s();
-    canImprov = readValueJson["canImprov"].s();
+    canImprov = readValueJson["canImprov"].b();
 }

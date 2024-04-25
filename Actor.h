@@ -26,12 +26,14 @@ class Actor : public Personnel
     public:
         /**
          * @brief Constructs a new Actor object.
-         * @param id the Actor ID.
-         * @param name the actor's name.
-         * @param improv if the actor can improv.
          */
-        Actor(std::string id, std::string name, bool improv);
+        Actor() {}
 
+        /**
+         * @brief Constructs a new Actor object.
+         */
+        Actor(crow::json::rvalue readValueJson);
+        
         /**
          * @brief Returns the id of Actor.
          * @return id of Actor.
