@@ -28,7 +28,7 @@ int main()
 {
     // Create GenericAPIs to use in the CROW_ROUTES
     GenericAPI<Actor>::resourceMap = actorsMap;
-    GenericAPI<Cart>::resourceMap = carts;
+    GenericAPI<Cart>::resourceMap = cartsMap;
     GenericAPI<Director>::resourceMap = directorsMap;
     GenericAPI<Genre>::resourceMap = genresMap;
     GenericAPI<JellenReview>::resourceMap = reviewsMap;
