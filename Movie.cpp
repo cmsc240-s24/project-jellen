@@ -41,7 +41,7 @@ void Movie::updateFromJson(json::rvalue readValueJson)
     movieTitle = readValueJson["title"].s();
     movieCost = readValueJson["cost"].d();
     movieLength = readValueJson["length"].d();
-    linktoMoviePoster = readValueJson["linkToMoviePoster"].s();
+    linkToMoviePoster = readValueJson["linkToMoviePoster"].s();
 
     // Setting Personnel
     for (json::rvalue personnelReadValueJson: readValueJson["personnel"])
@@ -51,9 +51,9 @@ void Movie::updateFromJson(json::rvalue readValueJson)
 
     // Setting Genre
     json::rvalue genreReadValueJson = readValueJson["genre"];
-    genre = genresMap.at(genreReadValueJson["id"].s());
+    movieGenre = genresMap.at(genreReadValueJson["id"].s());
 
     // Setting JellenReview
     json::rvalue reviewReadValueJson = readValueJson["review"];
-    review = reviewsMap.at(reviewReadValueJson["id"].s());
+    movieReview = reviewsMap.at(reviewReadValueJson["id"].s());
 }
