@@ -12,17 +12,21 @@ TEST_CASE("Testing Movie Class")
     // Testing Movie constructor
     SUBCASE("Testing the Movie Constructor") 
     {
-        Genre horror(json::load(R"({"id":"1","genre":"Historical Drama"})))
-        
 
         // Create a new Movie class from json.
         Movie testMovie(json::load(R"({"id":"1","title":"Schindler's List","cost":3.99,"length": 195, "linkToMoviePoster":
-        "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i","personnel":[{}],"genre":})"));
+        "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i","personnel":[{"id": "1"}],"genre":{"id":"1"}, "review":{"id":"1"}})"));
 
         // Check that the constructor properly loaded the values.
         CHECK(testMovie.getID() == "1");
-        CHECK(testMovie.getName() == "Zendaya");
-        CHECK(testMovie.getImprov() == true);
+        CHECK(testMovie.getTitle() == "Schindler's List");
+        CHECK(testMovie.getCost() == 3.99);
+        CHECK(testMovie.getLength() == 195);
+        CHECK(testMovie.getGenre().getID() == "1");
+        CHECK(testMovie.getPersonnel()[0].getID() == "1");
+        CHECK(testMovie.getReview().getID() == "1");
+        CHECK(testMovie.getPoster() == "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i");
+
     }
 
     // Testing convertToJson method
@@ -47,8 +51,9 @@ TEST_CASE("Testing Movie Class")
     SUBCASE("Testing updateFromJson Method") 
     {
         // Create a new Movie class from json.
-        Movie testMovie(json::load(R"({"name":"Zendaya","id":"1","canImprov":true})"));
-
+        Movie testMovie(json::load(R"({"id":"1","title":"Schindler's List","cost":3.99,"length": 195, "linkToMoviePoster":
+        "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i","personnel":[{"id": "1"}],"genre":{"id":"1"}, "review":{"id":"1"}})"));
+}
         // Create the update json.
         json::rvalue updateJson = json::load(R"({"name":"Adam Sandler","id":"2","canImprov":true})");
 
@@ -56,8 +61,12 @@ TEST_CASE("Testing Movie Class")
         testMovie.updateFromJson(updateJson);
 
         // Check the updated values.
-        CHECK(testMovie.getID() == "2");
-        CHECK(testMovie.getName() == "Adam Sandler");
-        CHECK(testMovie.getImprov() == true);
+        CHECK(testMovie.getID() == "1");
+        CHECK(testMovie.getTitle() == "Schindler's List");
+        CHECK(testMovie.getCost() == 3.99);
+        CHECK(testMovie.getLength() == 195);
+        CHECK(testMovie.getGenre().getID() == "1");
+        CHECK(testMovie.getPersonnel()[0].getID() == "1");
+        CHECK(testMovie.getPoster() == "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i");
     }
 }

@@ -109,6 +109,18 @@ class Movie
         void setPersonnel(std::vector<Personnel> newPersonnel) { moviePersonnel = newPersonnel; }
 
         /**
+         * @brief Returns the Review of the movie.
+         * @return Review of movie.
+         */
+        JellenReview getReview() const { return movieReview; }
+
+        /**
+         * @brief Sets the Review of the movie.
+         * @param newReview review of movie.
+         */
+        void setReview(JellenReview newReview) { movieReview = newReview; }
+
+        /**
          * @brief Returns the link to the poster of the movie.
          * @return movie poster.
          */
