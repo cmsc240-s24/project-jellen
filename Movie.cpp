@@ -7,15 +7,15 @@ extern map<std::string, Genre> genresMap;
 extern map<std::string, JellenReview> reviewsMap;
 extern map<std::string, Personnel> personnelMap;
 
-Movie::Movie(json::rvalue readValueJson)  
+Movie::Movie(crow::json::rvalue readValueJson)  
 {
     updateFromJson(readValueJson);
 }
 
 // Convert to JSON
-json::wvalue Movie::convertToJson() 
+crow::json::wvalue Movie::convertToJson() 
 {
-    json::wvalue writeJson;
+    crow::json::wvalue writeJson;
     writeJson["id"] = movieID;
     writeJson["title"] = movieTitle;
     writeJson["cost"] = movieCost;
@@ -35,7 +35,7 @@ json::wvalue Movie::convertToJson()
 }
 
 // Update from JSON
-void Movie::updateFromJson(json::rvalue readValueJson) 
+void Movie::updateFromJson(crow::json::rvalue readValueJson) 
 {
     movieID = readValueJson["id"].s();
     movieTitle = readValueJson["title"].s();
