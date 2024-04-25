@@ -10,7 +10,7 @@ using namespace crow;
 TEST_CASE("Testing Director Class") 
 {
     // Testing Director constructor
-    SUBCASE("Testing the Genre Constructor") 
+    SUBCASE("Testing the Director Constructor") 
     {
         // Create a new Director class from json.
         Director testDirector(json::load(R"({"name":"Wes Anderson","id":"1","number of films made":11})"));
