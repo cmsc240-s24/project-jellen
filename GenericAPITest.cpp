@@ -29,7 +29,7 @@ TEST_CASE("Creating a new Actor resource")
 
     // Setup request object
     request req;
-    req.body = R"({"canImprov":true,"id":"1", "name":"Zac Efron"})"; 
+    req.body = R"({"canImprov":true, "id":"1", "name":"Zac Efron"})"; 
 
     // Perform the action
     response res = GenericAPI<Actor>::createResource(req);
@@ -46,7 +46,7 @@ TEST_CASE("Creating a new Actor resource")
 TEST_CASE("Reading an Actor resource") 
 {
     // Load a resource to read.
-    actorsMap["1"] = Actor{json::load(R"({"canImprov":true,"id":"1", "name":"Zac Efron"})")};
+    actorsMap["1"] = Actor{json::load(R"({"canImprov":true, "id":"1", "name":"Zac Efron"})")};
 
     // Setup resource map to be empty before the test
     GenericAPI<Actor>::resourceMap = actorsMap;
@@ -97,7 +97,7 @@ TEST_CASE("Updating an Actor resource")
 
     // Setup request object
     request req;
-    req.body = R"({"canImprov":true,"id":"1","name":"Monique Coleman"})"; 
+    req.body = R"({"canImprov":true, "id":"1", "name":"Monique Coleman"})"; 
 
     // Setup a response object
     response res;
