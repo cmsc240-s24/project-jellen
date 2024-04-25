@@ -10,9 +10,9 @@
 #ifndef ACTOR_H
 #define ACTOR_H
 
-#include "Personnel.h"
 #include <string>
 #include <crow.h>
+#include "Personnel.h"
 
 /**
  * @class Actor

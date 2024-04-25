@@ -61,13 +61,13 @@ class Personnel
          * @brief Convert the Personnel object to JSON
          * @return crow::json::wvalue
          */
-        void updateFromJson(crow::json::rvalue readValueJson);
+        virtual void updateFromJson(crow::json::rvalue readValueJson);
         
         /**
          * @brief Convert the Cart object to JSON
          * @return crow::json::wvalue
          */
-        crow::json::wvalue convertToJson();
+        virtual crow::json::wvalue convertToJson();
 
     private:
         /**
