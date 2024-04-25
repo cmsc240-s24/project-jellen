@@ -11,17 +11,16 @@ Actor::Actor(json::rvalue readValueJson)
 // Convert to JSON
 json::wvalue Actor::convertToJson() 
 {
-    json::wvalue writeJson;
-    writeJson["id"] = actorID;
-    writeJson["name"] = actorName;
+    json::wvalue writeJson = Personnel::convertToJson();
+
     writeJson["canImprov"] = canImprov;
+
     return writeJson;
 }
 
 // Update from JSON
 void Actor::updateFromJson(json::rvalue readValueJson) 
 {
-    actorID = readValueJson["id"].s();
-    actorName = readValueJson["name"].s();
+    Personnel::updateFromJson(readValueJson);
     canImprov = readValueJson["canImprov"].b();
 }

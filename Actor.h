@@ -33,30 +33,6 @@ class Actor : public Personnel
          * @brief Constructs a new Actor object.
          */
         Actor(crow::json::rvalue readValueJson);
-        
-        /**
-         * @brief Returns the id of Actor.
-         * @return id of Actor.
-         */
-        std::string getID() const { return actorID; }
-
-        /**
-         * @brief Sets the value of actorID.
-         * @param newID the Actor ID.
-         */
-        void setID(std::string newID) { actorID = newID; }
-
-        /**
-         * @brief Returns the name of Actor.
-         * @return name of Actor.
-         */
-        std::string getName() const { return actorName; }
-
-        /**
-         * @brief Sets the value of actorName.
-         * @param newName the name of the Actor.
-         */
-        void setName(std::string newName) { actorName = newName; }
 
         /**
          * @brief Returns the value of if the actor can improv.
@@ -83,16 +59,6 @@ class Actor : public Personnel
         void updateFromJson(crow::json::rvalue readValueJson);
 
     private:
-        /**
-         * @brief Actor ID
-        */
-        std::string actorID;
-
-        /**
-         * @brief Actor Name
-        */
-        std::string actorName;
-
         /**
          * @brief canImprov
         */
