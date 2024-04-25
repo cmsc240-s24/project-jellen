@@ -56,7 +56,7 @@ class JellenReview
          * @brief Sets the value of review.
          * @param newReview Jellen's review of movie.
          */
-        void setRating(int newReview) { reviewString = newReview; }
+        void setReview(int newReview) { reviewString = newReview; }
 
         /**
          * @brief Returns Jellen's rating of the movie.
@@ -69,9 +69,6 @@ class JellenReview
          * @param newRating Jellen's rating of movie.
          */
         void setRating(int newRating) { jellenRating = newRating; }
-
-        // !!!
-        // do get movie & set movie once that .h file has been made
 
         /**
          * @brief Returns the value of if Jellen would rewatch the movie.

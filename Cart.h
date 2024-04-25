@@ -3,7 +3,7 @@
  * @file Cart.h
  * @brief Header file for the Cart class.
  *
- * This file contains the declaration of the Cart class along with its
+ * This file contains the declaration of the Cart class  along with its
  * member functions and variables.
  */
 
@@ -13,6 +13,7 @@
 #include <crow.h>
 #include <string>
 #include <vector>
+#include "Movie.h"
 
 /**
  * @class Cart
@@ -45,6 +46,7 @@ class Cart
          * @brief Get the Movies object
          * @return std::vector<Movies>
          */
+     
         std::vector<Movie> getMovies() const { return movies; }
 
         /**

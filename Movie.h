@@ -61,16 +61,16 @@ class Movie
         void setTitle(std::string newTitle) { movieTitle = newTitle; }
 
         /**
-         * @brief Returns the length of the movie.
-         * @return length of movie.
+         * @brief Returns the cost of the movie.
+         * @return cost of movie.
          */
-        double getCost() const { return movieLength; }
+        double getCost() const { return movieCost; }
 
         /**
-         * @brief Sets the length of the movie.
-         * @param newLength length of movie.
+         * @brief Sets the cost of the movie.
+         * @param newCost cost of movie.
          */
-        void set(std::string newLength) { movieLength = newLength; }
+        void setCost(double newCost) { movieCost = newCost; }
 
         /**
          * @brief Returns the length of the movie.
@@ -82,7 +82,7 @@ class Movie
          * @brief Sets the length of the movie.
          * @param newLength length of movie.
          */
-        void setLength(std::string newLength) { movieLength = newLength; }
+        void setLength(double newLength) { movieLength = newLength; }
 
         /**
          * @brief Returns the Genre of the movie.
@@ -118,13 +118,13 @@ class Movie
          * @brief Sets the link to the poster of the movie.
          * @param newPoster new poster link for movie.
          */
-        void setTitle(std::string newPoster) { linkToMoviePoster = newPoster; }
+        void setPoster(std::string newPoster) { linkToMoviePoster = newPoster; }
 
         /**
          * @brief Convert the Movie object to JSON
          * @return crow::json::wvalue
          */
-        updateFromJson(crow::json::rvalue readValueJson);
+        void updateFromJson(crow::json::rvalue readValueJson);
         
         /**
          * @brief Convert the Movie object to JSON
