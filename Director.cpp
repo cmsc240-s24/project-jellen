@@ -11,9 +11,8 @@ Director::Director(json::rvalue readValueJson)
 // Convert to JSON
 json::wvalue Director::convertToJson() 
 {
-    json::wvalue writeJson;
-    writeJson["id"] = directorID;
-    writeJson["name"] = directorName;
+    json::wvalue writeJson = Personnel::convertToJson();
+
     writeJson["number of films made"] = numberOfFilmsMade;
     return writeJson;
 }
@@ -21,7 +20,7 @@ json::wvalue Director::convertToJson()
 // Update from JSON
 void Director::updateFromJson(json::rvalue readValueJson) 
 {
-    directorID = readValueJson["id"].s();
-    directorName = readValueJson["name"].s();
+    Personnel::updateFromJson(readValueJson);
+    
     numberOfFilmsMade = readValueJson["number of films made"].s();
 }

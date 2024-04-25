@@ -12,6 +12,7 @@
 
 #include <crow.h>
 #include <string>
+#include "Personnel.h"
 
 /**
  * @class Director
@@ -33,30 +34,6 @@ class Director : public Personnel
          * @param readValueJson
          */
         Director(crow::json::rvalue readValueJson);
-
-        /**
-         * @brief Returns the id of Director.
-         * @return id of Director.
-         */
-        std::string getID() const { return directorID; }
-
-        /**
-         * @brief Sets the value of directorID.
-         * @param newID the Director ID.
-         */
-        void setID(std::string newID) { directorID = newID; }
-
-        /**
-         * @brief Returns the name of Director.
-         * @return name of Director.
-         */
-        std::string getName() const { return directorName; }
-
-        /**
-         * @brief Sets the value of directorName.
-         * @param newName the Director name.
-         */
-        void setName(std::string newName) { directorName = newName; }
 
         /**
          * @brief Returns the number of films made by the director.
@@ -83,16 +60,6 @@ class Director : public Personnel
         void updateFromJson(crow::json::rvalue readValueJson);
    
     private:
-        /**
-         * @brief directorID
-        */
-        std::string directorID;
-
-        /**
-         * @brief directorName
-        */
-        std::string directorName;
-
         /**
          * @brief numberOfFilmsMade
         */

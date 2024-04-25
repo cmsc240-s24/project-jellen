@@ -73,12 +73,12 @@ class Personnel
         /**
          * @brief Personnel ID
          */
-        std::string personnelID;
+        std::string id;
 
         /**
          * @brief Personnel Name
          */
-        std::string personnelName;
+        std::string name;
 };
 
 #endif // PERSONNEL_H
