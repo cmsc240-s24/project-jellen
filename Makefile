@@ -1,6 +1,6 @@
 all: MovieStoreAPI static-analysis run-unit-tests 
 
-MovieStoreAPI: MovieStoreAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Movie.o Personnnel.o GenericAPI.o 
+MovieStoreAPI: MovieStoreAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Movie.o Personnel.o GenericAPI.o 
 	g++ -lpthread MovieStoreAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Personnel.o GenericAPI.o -o MovieStoreAPI
 
 MovieStoreAPI.o: MovieStoreAPI.cpp Actor.h Cart.h Director.h Genre.h JellenReview.h Movie.h Personnel.h GenericAPI.h persistence.h

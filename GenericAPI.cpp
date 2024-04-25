@@ -50,7 +50,7 @@ response GenericAPI<T>::createResource(request req)
     T resource{readValueJson};
 
     // Add the new resource to the map.
-    resourceMap[resource.getId()] = resource;
+    resourceMap[resource.getID()] = resource;
 
     // Return the create resource as a JSON string.
     // 201 Created: The request succeeded, and a new resource was created as a result.
