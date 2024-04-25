@@ -48,4 +48,4 @@ static-analysis:
 	cppcheck *.cpp
 
 clean:
-	rm -f *.o movieStoreAPI
+	rm -f *.o MovieStoreAPI
