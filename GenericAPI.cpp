@@ -14,7 +14,6 @@
 #include "Genre.h"
 #include "JellenReview.h"
 #include "Movie.h"
-#include "Movie.h"
 #include "Personnel.h"
 
 using namespace std;
@@ -36,7 +35,6 @@ map<string, T> GenericAPI<T>::resourceMap;
 template<typename T> 
 response GenericAPI<T>::createResource(request req) 
 {
-    cout << "create resource: loading Json" << endl;
     // Load the request body string into a JSON read value.
     json::rvalue readValueJson = json::load(req.body);
 
@@ -44,7 +42,6 @@ response GenericAPI<T>::createResource(request req)
     // 400 Bad Request: The server cannot or will not process the request due to something
     // that is perceived to be a client error (e.g., malformed request syntax, invalid 
     // request message framing, or deceptive request routing).
-    cout << "error if invalid" << endl;
     if (!readValueJson) 
         return response(400, "Invalid JSON");
     

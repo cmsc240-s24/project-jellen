@@ -29,7 +29,7 @@ TEST_CASE("Creating a new Actor resource")
 
     // Setup request object
     request req;
-    req.body = R"({"actor":"Zac Efron","id":"1"})"; 
+    req.body = R"({"name":"Zac Efron","id":"1"})"; 
 
     // Perform the action
     response res = GenericAPI<Actor>::createResource(req);
@@ -86,10 +86,10 @@ TEST_CASE("Reading all Actor resources")
 TEST_CASE("Updating an Actor resource") 
 {
     // Load resources to update.
-    actorsMap["1"] = Actor{json::load(R"({"name":"Zac Efron","id":"1"})")};
-    actorsMap["2"] = Actor{json::load(R"({"name":"Vanessa Hudgens","id":"2"})")};
-    actorsMap["3"] = Actor{json::load(R"({"name":"Ashley Tisdale","id":"3"})")};
-    actorsMap["4"] = Actor{json::load(R"({"name":"Corbin Bleu","id":"4"})")};
+    actorsMap["1"] = Actor{json::load(R"({"id":"1", "name":"Zac Efron"})")};
+    actorsMap["2"] = Actor{json::load(R"({"id":"2", "name":"Vanessa Hudgens"})")};
+    actorsMap["3"] = Actor{json::load(R"({"id":"3", "name":"Ashley Tisdale"})")};
+    actorsMap["4"] = Actor{json::load(R"({"id":"4", "name":"Corbin Bleu"})")};
 
     // Setup resource map to be empty before the test
     GenericAPI<Actor>::resourceMap = actorsMap;
@@ -116,10 +116,10 @@ TEST_CASE("Updating an Actor resource")
 TEST_CASE("Deleting an Actor resource") 
 {
     // Load a resources to update.
-    actorsMap["1"] = Actor{json::load(R"({"name":"Zac Efron","id":"1"})")};
-    actorsMap["2"] = Actor{json::load(R"({"name":"Vanessa Hudgens","id":"2"})")};
-    actorsMap["3"] = Actor{json::load(R"({"name":"Ashley Tisdale","id":"3"})")};
-    actorsMap["4"] = Actor{json::load(R"({"name":"Corbin Bleu","id":"4"})")};
+    actorsMap["1"] = Actor{json::load(R"({"id":"1", "name":"Zac Efron"})")};
+    actorsMap["2"] = Actor{json::load(R"({"id":"2", "name":"Vanessa Hudgens"})")};
+    actorsMap["3"] = Actor{json::load(R"({"id":"3", "name":"Ashley Tisdale"})")};
+    actorsMap["4"] = Actor{json::load(R"({"id":"4", "name":"Corbin Bleu"})")};
 
     // Setup resource map to be empty before the test
     GenericAPI<Actor>::resourceMap = actorsMap;
