@@ -13,18 +13,18 @@ TEST_CASE("Testing Director Class")
     SUBCASE("Testing the Genre Constructor") 
     {
         // Create a new Director class from json.
-        Director testDirector(json::load(R"({"director":"Wes Anderson","id":"1"})"));
+        Director testDirector(json::load(R"({"name":"Wes Anderson","id":"1"})"));
 
         // Check that the constructor properly loaded the values.
-        CHECK(testDirector.getDirectorID() == "1");
-        CHECK(testDirector.getDirector() == "Wes Anderson");
+        CHECK(testDirector.getID() == "1");
+        CHECK(testDirector.getName() == "Wes Anderson");
     }
 
     // Testing convertToJson method
     SUBCASE("Testing the convertToJson Method") 
     {
         // Create a new Director class from json.
-        Director testDirector(json::load(R"({"director":"Wes Anderson","id":"1"})"));
+        Director testDirector(json::load(R"({"name":"Wes Anderson","id":"1"})"));
 
         // Convert the Director class to json using the convertToJson method.
         json::wvalue jsonOutput = testDirector.convertToJson();
@@ -34,23 +34,23 @@ TEST_CASE("Testing Director Class")
 
         // Check the values.
         CHECK(jsonReadValue["id"].s() == "1");
-        CHECK(jsonReadValue["director"].s() == "Wes Anderson");
+        CHECK(jsonReadValue["name"].s() == "Wes Anderson");
     }
 
     // Testing updateFromJson method
     SUBCASE("Testing updateFromJson Method") 
     {
         // Create a new Director class from json.
-        Director testDirector(json::load(R"({"director":"Wes Anderson","id":"1"})"));
+        Director testDirector(json::load(R"({"name":"Wes Anderson","id":"1"})"));
 
         // Create the update json.
-        json::rvalue updateJson = json::load(R"({"director":"Kenny Ortega","id":"2"})");
+        json::rvalue updateJson = json::load(R"({"name":"Kenny Ortega","id":"2"})");
 
         // Update the Director with the updateFromJson method. 
         testDirector.updateFromJson(updateJson);
 
         // Check the updated values.
-        CHECK(testDirector.getDirectorID() == "2");
-        CHECK(testDirector.getDirector() == "Kenny Ortega");
+        CHECK(testDirector.getID() == "2");
+        CHECK(testDirector.getName() == "Kenny Ortega");
     }
 }
