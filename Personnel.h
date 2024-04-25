@@ -37,25 +37,25 @@ class Personnel
          * @brief Returns the id of Personnel.
          * @return id of Personnel.
          */
-        std::string getID() const { return personnelID; }
+        std::string getID() const { return id; }
 
         /**
-         * @brief Sets the value of personnelID.
+         * @brief Sets the value of id.
          * @param newID the Personnel ID.
          */
-        void setID(std::string newID) { personnelID = newID; }
+        void setID(std::string newID) { id = newID; }
 
         /**
          * @brief Returns the name of Personnel.
          * @return name of Personnel.
          */
-        std::string getName() const { return personnelName; }
+        std::string getName() const { return name; }
 
         /**
-         * @brief Sets the value of personnelName.
+         * @brief Sets the value of name.
          * @param newName the Personnel name.
          */
-        void setName(std::string newName) { personnelName = newName; }
+        void setName(std::string newName) { name = newName; }
 
         /**
          * @brief Convert the Personnel object to JSON
