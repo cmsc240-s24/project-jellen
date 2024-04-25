@@ -29,7 +29,7 @@ TEST_CASE("Creating a new Actor resource")
 
     // Setup request object
     request req;
-    req.body = R"({"name":"Zac Efron","id":"1", "canImprov":true})"; 
+    req.body = R"({"canImprov":true,"id":"1", "name":"Zac Efron"})"; 
 
     // Perform the action
     response res = GenericAPI<Actor>::createResource(req);
@@ -46,7 +46,7 @@ TEST_CASE("Creating a new Actor resource")
 TEST_CASE("Reading an Actor resource") 
 {
     // Load a resource to read.
-    actorsMap["1"] = Actor{json::load(R"({"name":"Zac Efron","id":"1", "canImprov":true})")};
+    actorsMap["1"] = Actor{json::load(R"({"canImprov":true,"id":"1", "name":"Zac Efron"})")};
 
     // Setup resource map to be empty before the test
     GenericAPI<Actor>::resourceMap = actorsMap;
@@ -63,10 +63,10 @@ TEST_CASE("Reading an Actor resource")
 TEST_CASE("Reading all Actor resources") 
 {
     // Load resources to read.
-    actorsMap["1"] = Actor{json::load(R"({"name":"Zac Efron","id":"1", "canImprov":true})")};
-    actorsMap["2"] = Actor{json::load(R"({"name":"Vanessa Hudgens","id":"2", "canImprov":false})")};
-    actorsMap["3"] = Actor{json::load(R"({"name":"Ashley Tisdale","id":"3", "canImprov":true})")};
-    actorsMap["4"] = Actor{json::load(R"({"name":"Corbin Bleu","id":"4", "canImprov":false})")};
+    actorsMap["1"] = Actor{json::load(R"({"canImprov":true, "id":"1", "name":"Zac Efron"})")};
+    actorsMap["2"] = Actor{json::load(R"({"canImprov":false, "id":"2", "name":"Vanessa Hudgens"})")};
+    actorsMap["3"] = Actor{json::load(R"({"canImprov": true, "id":"3", "name":"Ashley Tisdale"})")};
+    actorsMap["4"] = Actor{json::load(R"({"canImprov":false, "id":"4", "name":"Corbin Bleu"})")};
 
     // Setup resource map to be empty before the test
     GenericAPI<Actor>::resourceMap = actorsMap;
@@ -75,7 +75,7 @@ TEST_CASE("Reading all Actor resources")
     response res = GenericAPI<Actor>::readAllResources();
 
     // Create the expected reponse body
-    string expectedResponseBody = R"([{"name":"Zac Efron","id":"1", "canImprov":true},{"name":"Vanessa Hudgens","id":"2", "canImprov":false},{"name":"Ashley Tisdale","id":"3", "canImprov":true},{"name":"Corbin Bleu","id":"4", "canImprov":false}])";
+    string expectedResponseBody = R"([{"canImprov":true, "id":"1", "name":"Zac Efron"},{"canImprov":false, "id":"2", "name":"Vanessa Hudgens"},{"canImprov":true, "id":"3", "name":"Ashley Tisdale"},{"canImprov":false, "id":"4", "name":"Corbin Bleu"}])";
 
     // Check the results
     CHECK(res.code == 200); // Check that the response code is 200 Ok
@@ -87,17 +87,17 @@ TEST_CASE("Reading all Actor resources")
 TEST_CASE("Updating an Actor resource") 
 {
     // Load resources to update.
-    actorsMap["1"] = Actor{json::load(R"({"name":"Zac Efron","id":"1", "canImprov":true})")};
-    actorsMap["2"] = Actor{json::load(R"({"name":"Vanessa Hudgens","id":"2", "canImprov":false})")};
-    actorsMap["3"] = Actor{json::load(R"({"name":"Ashley Tisdale","id":"3", "canImprov":true})")};
-    actorsMap["4"] = Actor{json::load(R"({"name":"Corbin Bleu","id":"4", "canImprov":false})")};
+    actorsMap["1"] = Actor{json::load(R"({"canImprov":true, "id":"1", "name":"Zac Efron"})")};
+    actorsMap["2"] = Actor{json::load(R"({"canImprov":false, "id":"2", "name":"Vanessa Hudgens"})")};
+    actorsMap["3"] = Actor{json::load(R"({"canImprov": true, "id":"3", "name":"Ashley Tisdale"})")};
+    actorsMap["4"] = Actor{json::load(R"({"canImprov":false, "id":"4", "name":"Corbin Bleu"})")};
 
     // Setup resource map to be empty before the test
     GenericAPI<Actor>::resourceMap = actorsMap;
 
     // Setup request object
     request req;
-    req.body = R"({"name":"Monique Coleman", "id":"1", "canImprov":true})"; 
+    req.body = R"({"canImprov":true,"id":"1","name":"Monique Coleman"})"; 
 
     // Setup a response object
     response res;
@@ -118,10 +118,10 @@ TEST_CASE("Updating an Actor resource")
 TEST_CASE("Deleting an Actor resource") 
 {
     // Load a resources to update.
-    actorsMap["1"] = Actor{json::load(R"({"name":"Zac Efron","id":"1", "canImprov":true})")};
-    actorsMap["2"] = Actor{json::load(R"({"name":"Vanessa Hudgens","id":"2", "canImprov":false})")};
-    actorsMap["3"] = Actor{json::load(R"({"name":"Ashley Tisdale","id":"3", "canImprov":true})")};
-    actorsMap["4"] = Actor{json::load(R"({"name":"Corbin Bleu","id":"4", "canImprov":false})")};
+    actorsMap["1"] = Actor{json::load(R"({"canImprov":true, "id":"1", "name":"Zac Efron"})")};
+    actorsMap["2"] = Actor{json::load(R"({"canImprov":false, "id":"2", "name":"Vanessa Hudgens"})")};
+    actorsMap["3"] = Actor{json::load(R"({"canImprov": true, "id":"3", "name":"Ashley Tisdale"})")};
+    actorsMap["4"] = Actor{json::load(R"({"canImprov":false, "id":"4", "name":"Corbin Bleu"})")};
 
     // Setup resource map to be empty before the test
     GenericAPI<Actor>::resourceMap = actorsMap;
