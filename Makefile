@@ -51,7 +51,7 @@ JellenReviewTest: JellenReviewTest.cpp JellenReview.cpp JellenReview.h
 PersonnelTest: PersonnelTest.cpp Personnel.cpp Personnel.h
 	g++ -lpthread PersonnelTest.cpp Personnel.o -o PersonnelTest 
 
-run-unit-tests: GenericAPITest persistenceTest GenreTest DirectorTest ActorTest JellenReviewTest
+run-unit-tests: GenericAPITest persistenceTest GenreTest DirectorTest ActorTest JellenReviewTest PersonnelTest
 	./GenericAPITest    ;\
 	./persistenceTest	;\
 	./GenreTest			;\
@@ -63,4 +63,4 @@ static-analysis:
 	cppcheck *.cpp
 
 clean:
-	rm -f *.o MovieStoreAPI GenericAPITest persistenceTest GenreTest DirectorTest CartTest
+	rm -f *.o MovieStoreAPI GenericAPITest persistenceTest GenreTest DirectorTest CartTest JellenReviewTest PersonnelTest
