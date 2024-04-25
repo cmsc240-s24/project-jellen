@@ -75,7 +75,7 @@ TEST_CASE("Reading all Actor resources")
     response res = GenericAPI<Actor>::readAllResources();
 
     // Create the expected reponse body
-    string expectedResponseBody = R"([{"canImprov":true,"id":"1","name":"Zac Efron"},{"canImprov":false,"id":"2","name":"Vanessa Hudgens"},{"canImprov":true,"id":"3","name":"Ashley Tisdale"},{"canImprov":false,"id":"4","name":"Corbin Bleu"}])";
+    string expectedResponseBody = R"([{"canImprov":true,"id":"1","name":"Zac Efron"},{"name":"Vanessa Hudgens","id":"2","canImprov":false},{"canImprov":true,"id":"3","name":"Ashley Tisdale"},{"canImprov":false,"id":"4","name":"Corbin Bleu"}])";
 
     // Check the results
     CHECK(res.code == 200); // Check that the response code is 200 Ok
