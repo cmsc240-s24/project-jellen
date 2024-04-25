@@ -39,18 +39,18 @@ persistenceTest: persistenceTest.cpp persistence.h Genre.o
 GenreTest: GenreTest.cpp Genre.cpp Genre.h Genre.o
 	g++ -lpthread GenreTest.cpp Genre.o -o GenreTest
 
-DirectorTest: DirectorTest.cpp Director.cpp Director.h Director.o
-	g++ -lpthread DirectorTest.cpp Director.o -o DirectorTest	
+DirectorTest: DirectorTest.cpp Director.cpp Director.h Personnel.o
+	g++ -lpthread DirectorTest.cpp Director.o Personnel.o -o DirectorTest 	
 
-CartTest: CartTest.cpp Cart.cpp Cart.h Cart.o
-	g++ -lpthread CartTest.cpp Cart.o -o CartTest
+ActorTest: ActorTest.cpp Actor.cpp Actor.h Personnel.o
+	g++ -lpthread ActorTest.cpp Actor.o Personnel.o -o ActorTest 	
 
-run-unit-tests: GenericAPITest persistenceTest GenreTest DirectorTest CartTest
+run-unit-tests: GenericAPITest persistenceTest GenreTest DirectorTest ActorTest
 	./GenericAPITest    ;\
 	./persistenceTest	;\
 	./GenreTest			;\
 	./DirectorTest		;\
-	./CartTest			;\
+	./ActorTest			:\
 
 static-analysis:
 	cppcheck *.cpp
