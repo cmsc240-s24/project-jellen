@@ -2,6 +2,7 @@
 
 using namespace std;
 using namespace crow;
+
 extern map<std::string, Movie> moviesMap;
 
 Cart::Cart(json::rvalue readValueJson)

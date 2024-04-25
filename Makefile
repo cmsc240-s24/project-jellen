@@ -48,4 +48,4 @@ static-analysis:
 	cppcheck *.cpp
 
 clean:
-	rm -f *.o movieStoreAPI GenericAPITest persistenceTest GenreTest
+	rm -f *.o movieStoreAPI
