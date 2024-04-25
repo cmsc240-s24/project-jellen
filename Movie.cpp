@@ -20,7 +20,7 @@ json::wvalue Movie::convertToJson()
     writeJson["title"] = movieTitle;
     writeJson["cost"] = movieCost;
     writeJson["length"] = movieLength;
-    writeJson["linktoMoviePoster"] = linktoMoviePoster;
+    writeJson["linkToMoviePoster"] = linkToMoviePoster;
     
     // Convert personnel to json (Save only the ids)
     int index = 0;
@@ -39,8 +39,8 @@ void Movie::updateFromJson(json::rvalue readValueJson)
 {
     movieID = readValueJson["id"].s();
     movieTitle = readValueJson["title"].s();
-    movieCost = readValueJson["cost"].s();
-    movieLength = readValueJson["length"].s();
+    movieCost = readValueJson["cost"].d();
+    movieLength = readValueJson["length"].d();
     linktoMoviePoster = readValueJson["linkToMoviePoster"].s();
 
     // Setting Personnel
