@@ -58,6 +58,7 @@ run-unit-tests: GenericAPITest persistenceTest GenreTest DirectorTest ActorTest 
 	./DirectorTest		;\
 	./ActorTest			:\
 	./JellenReviewTest  ;\
+	./PersonnelTest		;\
 
 static-analysis:
 	cppcheck *.cpp
