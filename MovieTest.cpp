@@ -33,7 +33,8 @@ TEST_CASE("Testing Movie Class")
     SUBCASE("Testing the convertToJson Method") 
     {
         // Create a new Movie class from json.
-        Movie testMovie(json::load(R"({"name":"Zendaya","id":"1", "canImprov":true})"));
+        Movie testMovie(json::load(R"({"id":"1","title":"Schindler's List","cost":3.99,"length": 195, "linkToMoviePoster":
+        "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i","personnel":[{"id": "1"}],"genre":{"id":"1"}, "review":{"id":"1"}})"));
 
         // Convert the Movie class to json using the convertToJson method.
         json::wvalue jsonOutput = testMovie.convertToJson();
@@ -43,8 +44,13 @@ TEST_CASE("Testing Movie Class")
 
         // Check the values.
         CHECK(jsonReadValue["id"].s() == "1");
-        CHECK(jsonReadValue["name"].s() == "Zendaya");
-        CHECK(testMovie.getImprov() == true);
+        CHECK(jsonReadValue["title"].s() == "Schindler's List");
+        CHECK(jsonReadValue["cost"].d() == 3.99);
+        CHECK(jsonReadValue["length"].i() == 195);
+        CHECK(jsonReadValue["linkToMoviePoster"].s() == "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i");
+        CHECK(jsonReadValue["personnel"][0]["id"].s() == "1");
+        CHECK(jsonReadValue["genre"]["id"].s() == "1");
+        CHECK(jsonReadValue["review"]["id"].s() == "1");
     }
 
     // Testing updateFromJson method
@@ -53,7 +59,7 @@ TEST_CASE("Testing Movie Class")
         // Create a new Movie class from json.
         Movie testMovie(json::load(R"({"id":"1","title":"Schindler's List","cost":3.99,"length": 195, "linkToMoviePoster":
         "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i","personnel":[{"id": "1"}],"genre":{"id":"1"}, "review":{"id":"1"}})"));
-}
+
         // Create the update json.
         json::rvalue updateJson = json::load(R"({"id":"1","title":"Fight Club","cost":3.99,"length": 139, "linkToMoviePoster":
         "https://www.imdb.com/title/tt0137523/mediaviewer/rm1412004864/?ref_=tt_ov_i","personnel":[{"id": "1"}],"genre":{"id":"1"}, "review":{"id":"1"}})");
