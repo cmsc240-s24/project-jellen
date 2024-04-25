@@ -76,13 +76,13 @@ class Movie
          * @brief Returns the length of the movie.
          * @return length of movie.
          */
-        double getLength() const { return movieLength; }
+        int getLength() const { return movieLength; }
 
         /**
          * @brief Sets the length of the movie.
          * @param newLength length of movie.
          */
-        void setLength(double newLength) { movieLength = newLength; }
+        void setLength(int newLength) { movieLength = newLength; }
 
         /**
          * @brief Returns the Genre of the movie.
@@ -151,7 +151,7 @@ class Movie
         /**
          * @brief movieLength
          */
-        double movieLength;
+        int movieLength;
 
         /**
          * @brief movieGenre

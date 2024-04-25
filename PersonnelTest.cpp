@@ -13,13 +13,14 @@ TEST_CASE("Testing Personnel Class")
     SUBCASE("Testing the Personnel Constructor") 
     {
         // Create a new Personnel class from json.
-        Personnel testPersonnel(json::load(R"({"name":"Wes Anderson","id":"1")"));
+        Personnel testPersonnel(json::load(R"({"name":"Wes Anderson","id":"1"})"));
 
         // Check that the constructor properly loaded the values.
         CHECK(testPersonnel.getID() == "1");
         CHECK(testPersonnel.getName() == "Wes Anderson");
     }
 
+    cout << "second subcase" << endl;
     // Testing convertToJson method
     SUBCASE("Testing the convertToJson Method") 
     {

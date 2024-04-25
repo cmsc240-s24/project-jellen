@@ -40,7 +40,7 @@ void Movie::updateFromJson(crow::json::rvalue readValueJson)
     movieID = readValueJson["id"].s();
     movieTitle = readValueJson["title"].s();
     movieCost = readValueJson["cost"].d();
-    movieLength = readValueJson["length"].d();
+    movieLength = readValueJson["length"].i();
     linkToMoviePoster = readValueJson["linkToMoviePoster"].s();
 
     // Setting Personnel
