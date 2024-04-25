@@ -1,10 +1,10 @@
-all: movieStoreAPI static-analysis run-unit-tests 
+all: MovieStoreAPI static-analysis run-unit-tests 
 
-movieStoreAPI: movieStoreAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Movie.o Personnnel.o GenericAPI.o 
-	g++ -lpthread movieStoreAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Personnel.o GenericAPI.o -o movieStoreAPI
+MovieStoreAPI: MovieStoreAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Movie.o Personnnel.o GenericAPI.o 
+	g++ -lpthread MovieStoreAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Personnel.o GenericAPI.o -o MovieStoreAPI
 
-movieStoreAPI.o: movieStoreAPI.cpp CompactDisc.h Record.h Artist.h Genre.h GenericAPI.h persistence.h
-	g++ -Wall -c movieStoreAPI.cpp 
+MovieStoreAPI.o: MovieStoreAPI.cpp CompactDisc.h Record.h Artist.h Genre.h GenericAPI.h persistence.h
+	g++ -Wall -c MovieStoreAPI.cpp 
 
 Cart.o: Cart.cpp Cart.h
 	g++ -Wall -c Cart.cpp 
@@ -49,5 +49,3 @@ static-analysis:
 
 clean:
 	rm -f *.o movieStoreAPI GenericAPITest persistenceTest GenreTest
-clean:
-	rm -f movieStoreAPI
