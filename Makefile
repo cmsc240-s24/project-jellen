@@ -48,6 +48,9 @@ ActorTest: ActorTest.cpp Actor.cpp Actor.h Personnel.o
 JellenReviewTest: JellenReviewTest.cpp JellenReview.cpp JellenReview.h
 	g++ -lpthread JellenReviewTest.cpp JellenReview.o -o JellenReviewTest 
 
+PersonnelTest: PersonnelTest.cpp Personnel.cpp Personnel.h
+	g++ -lpthread PersonnelTest.cpp Personnel.o -o PersonnelTest 
+
 run-unit-tests: GenericAPITest persistenceTest GenreTest DirectorTest ActorTest JellenReviewTest
 	./GenericAPITest    ;\
 	./persistenceTest	;\
