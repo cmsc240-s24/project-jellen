@@ -18,7 +18,7 @@ json::wvalue Cart::convertToJson()
     int index = 0;
     for (Movie movie : movies) 
     {
-        writeJson["movies"][index]["id"] = movie.getId();
+        writeJson["movies"][index]["id"] = movie.getID();
     }
    
     writeJson["amount owed"] = amount;
@@ -37,5 +37,5 @@ void Cart::updateFromJson(json::rvalue readValueJson)
         movies.push_back(moviesMap.at(movieReadValueJson["id"].s()));
     }
     
-    amount = readValueJson["amount owed"].();
+    amount = readValueJson["amount owed"].d();
 }
