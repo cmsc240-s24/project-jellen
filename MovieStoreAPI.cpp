@@ -15,13 +15,13 @@ using namespace std;
 using namespace crow;
 
 // Load resources from files.
-map<std::string, Actor> actorsMap; // = loadFromFile<Actor>("actors.json");
+map<std::string, Actor> actorsMap = loadFromFile<Actor>("actors.json");
 //map<std::string, Cart> cartsMap = loadFromFile<Cart>("carts.json");
-map<std::string, Director> directorsMap; // = loadFromFile<Director>("directors.json");
-map<std::string, Genre> genresMap; // = loadFromFile<Genre>("genres.json");
-map<std::string, JellenReview> reviewsMap; // = loadFromFile<JellenReview>("reviews.json");
+map<std::string, Director> directorsMap = loadFromFile<Director>("directors.json");
+map<std::string, Genre> genresMap = loadFromFile<Genre>("genres.json");
+map<std::string, JellenReview> reviewsMap = loadFromFile<JellenReview>("reviews.json");
 map<std::string, Movie> moviesMap = loadFromFile<Movie>("movies.json");
-map<std::string, Personnel> personnelMap; // = loadFromFile<Personnel>("personnel.json");
+map<std::string, Personnel> personnelMap = loadFromFile<Personnel>("personnel.json");
 
 int main() 
 {
@@ -104,7 +104,7 @@ int main()
     cout << "after personnel api methods:" << endl;
     
     // Run the web service app.
-    app.port(19999).run();
+    app.port(17892).run();
         
     // After the web service stops running:
 
