@@ -22,5 +22,5 @@ void Director::updateFromJson(json::rvalue readValueJson)
 {
     Personnel::updateFromJson(readValueJson);
     
-    numberOfFilmsMade = readValueJson["number of films made"].i();
+    setFilmsMade(numberOfFilmsMade = readValueJson["number of films made"].i());
 }
