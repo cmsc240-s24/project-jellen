@@ -17,7 +17,7 @@ using namespace crow;
 
 // Load resources from files.
 map<std::string, Actor> actorsMap = loadFromFile<Actor>("actors.json");
-map<std::string, Cart> cartsMap = loadFromFile<Cart>("carts.json");
+//map<std::string, Cart> cartsMap = loadFromFile<Cart>("carts.json");
 map<std::string, Director> directorsMap = loadFromFile<Director>("directors.json");
 map<std::string, Genre> genresMap = loadFromFile<Genre>("genres.json");
 map<std::string, JellenReview> reviewsMap = loadFromFile<JellenReview>("reviews.json");
