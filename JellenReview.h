@@ -56,7 +56,7 @@ class JellenReview
          * @brief Sets the value of review.
          * @param newReview Jellen's review of movie.
          */
-        void setReview(int newReview) { reviewString = newReview; }
+        void setReview(std::string newReview) { reviewString = newReview; }
 
         /**
          * @brief Returns Jellen's rating of the movie.
