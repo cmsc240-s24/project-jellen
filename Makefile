@@ -15,8 +15,8 @@ Genre.o: Genre.cpp Genre.h
 JellenReview.o: JellenReview.cpp JellenReview.h
 	g++ -Wall -c JellenReview.cpp 
 
-#Movie.o: Movie.cpp Movie.h Genre.h JellenReview.h Personnel.h
-#	g++ -Wall -c Movie.cpp 
+Movie.o: Movie.cpp Movie.h Genre.h JellenReview.h Personnel.h
+	g++ -Wall -c Movie.cpp 
 
 Personnel.o: Personnel.cpp Personnel.h
 	g++ -Wall -c Personnel.cpp
@@ -27,7 +27,7 @@ Actor.o: Actor.cpp Actor.h Personnel.h
 Director.o: Director.cpp Director.h Personnel.h
 	g++ -Wall -c Director.cpp
 
-GenericAPI.o: GenericAPI.cpp GenericAPI.h Actor.h Cart.h Director.h Genre.h JellenReview.h Movie.h Personnel.h
+GenericAPI.o: GenericAPI.cpp GenericAPI.h Actor.h Cart.h Director.h Genre.h JellenReview.h Personnel.h
 	g++ -Wall -c GenericAPI.cpp 
 
 GenericAPITest: GenericAPITest.cpp GenericAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Personnel.o
@@ -54,8 +54,8 @@ PersonnelTest: PersonnelTest.cpp Personnel.cpp Personnel.h
 #CartTest: CartTest.cpp Cart.cpp Cart.h
 #	g++ -lpthread CartTest.cpp Cart.o -o CartTest
 
-# MovieTest: MovieTest.cpp Movie.o Genre.o Personnel.o JellenReview.o Actor.o Cart.o Director.o
-# 	g++ -lpthread MovieTest.cpp Movie.o Genre.o Personnel.o JellenReview.o Actor.o Cart.o Director.o -o MovieTest
+MovieTest: MovieTest.cpp Movie.o Genre.o Personnel.o JellenReview.o Actor.o Cart.o Director.o
+	g++ -lpthread MovieTest.cpp Movie.o Genre.o Personnel.o JellenReview.o Actor.o Cart.o Director.o -o MovieTest
 
 run-unit-tests: GenericAPITest persistenceTest GenreTest DirectorTest ActorTest JellenReviewTest PersonnelTest #CartTest 
 	./GenericAPITest    ;\

@@ -192,5 +192,5 @@ template class GenericAPI<Actor>;
 template class GenericAPI<Director>;
 template class GenericAPI<Genre>;
 template class GenericAPI<JellenReview>;
-//template class GenericAPI<Movie>;
+template class GenericAPI<Movie>;
 template class GenericAPI<Personnel>;
