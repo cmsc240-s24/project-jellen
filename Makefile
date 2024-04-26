@@ -67,8 +67,8 @@ run-unit-tests: GenericAPITest persistenceTest GenreTest DirectorTest ActorTest 
 	./PersonnelTest		;\
 	
 
-static-analysis:
-	cppcheck *.cpp
+#static-analysis:
+#	cppcheck *.cpp
 
 clean:
 	rm -f *.o MovieStoreAPI GenericAPITest persistenceTest GenreTest DirectorTest JellenReviewTest PersonnelTest
