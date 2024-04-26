@@ -34,7 +34,7 @@ class Movie
          * @brief Construct a new Movie object
          * @param readValueJson
          */
-        Movie(crow::json::rvalue readValueJson);
+        Movie(json::rvalue readValueJson);
         
         /**
          * @brief Returns the id of Movie.
@@ -136,13 +136,13 @@ class Movie
          * @brief Convert the Movie object to JSON
          * @return crow::json::wvalue
          */
-        void updateFromJson(crow::json::rvalue readValueJson);
+        void updateFromJson(json::rvalue readValueJson);
         
         /**
          * @brief Convert the Movie object to JSON
          * @return crow::json::wvalue
          */
-        crow::json::wvalue convertToJson();
+        json::wvalue convertToJson();
 
     private: 
         /**
