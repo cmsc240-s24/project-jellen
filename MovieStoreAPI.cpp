@@ -28,7 +28,7 @@ int main()
 {
     // Create GenericAPIs to use in the CROW_ROUTES
     GenericAPI<Actor>::resourceMap = actorsMap;
-    GenericAPI<Cart>::resourceMap = cartsMap;
+    //GenericAPI<Cart>::resourceMap = cartsMap;
     GenericAPI<Director>::resourceMap = directorsMap;
     GenericAPI<Genre>::resourceMap = genresMap;
     GenericAPI<JellenReview>::resourceMap = reviewsMap;
@@ -48,11 +48,11 @@ int main()
     CROW_ROUTE(app, "/api/actors/<string>").methods("DELETE"_method)(GenericAPI<Actor>::deleteResource);
 
     // Cart
-    CROW_ROUTE(app, "/api/carts").methods("POST"_method)(GenericAPI<Cart>::createResource);
-    CROW_ROUTE(app, "/api/carts").methods("GET"_method)(GenericAPI<Cart>::readAllResources);
-    CROW_ROUTE(app, "/api/carts/<string>").methods("GET"_method)(GenericAPI<Cart>::readResource);
-    CROW_ROUTE(app, "/api/carts/<string>").methods("PUT"_method)(GenericAPI<Cart>::updateResource);
-    CROW_ROUTE(app, "/api/carts/<string>").methods("DELETE"_method)(GenericAPI<Cart>::deleteResource);
+    // CROW_ROUTE(app, "/api/carts").methods("POST"_method)(GenericAPI<Cart>::createResource);
+    // CROW_ROUTE(app, "/api/carts").methods("GET"_method)(GenericAPI<Cart>::readAllResources);
+    // CROW_ROUTE(app, "/api/carts/<string>").methods("GET"_method)(GenericAPI<Cart>::readResource);
+    // CROW_ROUTE(app, "/api/carts/<string>").methods("PUT"_method)(GenericAPI<Cart>::updateResource);
+    // CROW_ROUTE(app, "/api/carts/<string>").methods("DELETE"_method)(GenericAPI<Cart>::deleteResource);
 
     // Director
     CROW_ROUTE(app, "/api/directors").methods("POST"_method)(GenericAPI<Director>::createResource);
@@ -96,7 +96,7 @@ int main()
 
     // Perform persistence of resources
     saveToFile<Actor>(GenericAPI<Actor>::resourceMap, "actors.json");
-    saveToFile<Cart>(GenericAPI<Cart>::resourceMap, "carts.json");
+    //saveToFile<Cart>(GenericAPI<Cart>::resourceMap, "carts.json");
     saveToFile<Director>(GenericAPI<Director>::resourceMap, "directors.json");
     saveToFile<Genre>(GenericAPI<Genre>::resourceMap, "genres.json");
     saveToFile<JellenReview>(GenericAPI<JellenReview>::resourceMap, "reviews.json");
