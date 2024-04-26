@@ -22,5 +22,5 @@ json::wvalue Actor::convertToJson()
 void Actor::updateFromJson(json::rvalue readValueJson) 
 {
     Personnel::updateFromJson(readValueJson);
-    canImprov = readValueJson["canImprov"].b();
+    setImprov(canImprov = readValueJson["canImprov"].b());
 }
