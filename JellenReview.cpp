@@ -22,8 +22,8 @@ json::wvalue JellenReview::convertToJson()
 // Update from JSON
 void JellenReview::updateFromJson(json::rvalue readValueJson) 
 {
-    jellenReviewID = readValueJson["id"].s();
-    reviewString = readValueJson["review"].s();
-    jellenRating = readValueJson["rating"].i();
-    wouldWatchAgain = readValueJson["would watch again"].b();
+    setID(jellenReviewID = readValueJson["id"].s());
+    setReview(reviewString = readValueJson["review"].s());
+    setRating(jellenRating = readValueJson["rating"].i());
+    setWouldWatchAgain(wouldWatchAgain = readValueJson["would watch again"].b());
 }
