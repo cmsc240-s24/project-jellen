@@ -1,4 +1,9 @@
 #include "Movie.h"
+#include <map>
+#include "Genre.h" 
+#include "JellenReview.h" 
+#include "Personnel.h"
+#include "GenericAPI.h"
 
 using namespace std;
 using namespace crow;

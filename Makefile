@@ -51,11 +51,13 @@ JellenReviewTest: JellenReviewTest.cpp JellenReview.cpp JellenReview.h
 PersonnelTest: PersonnelTest.cpp Personnel.cpp Personnel.h
 	g++ -lpthread PersonnelTest.cpp Personnel.o -o PersonnelTest 
 
-MovieTest: MovieTest.cpp Movie.cpp Movie.h Personnel.h JellenReview.h Genre.h
-	g++ -lpthread MovieTest.cpp Movie.o -o MovieTest 
+CartTest: CartTest.cpp Cart.cpp Cart.h
+	g++ -lpthread CartTest.cpp Cart.o -o CartTest
 
+# MovieTest: MovieTest.cpp Movie.o Genre.o Personnel.o JellenReview.o Actor.o Cart.o Director.o
+# 	g++ -lpthread MovieTest.cpp Movie.o Genre.o Personnel.o JellenReview.o Actor.o Cart.o Director.o -o MovieTest
 
-run-unit-tests: GenericAPITest persistenceTest GenreTest DirectorTest ActorTest JellenReviewTest PersonnelTest MovieTest
+run-unit-tests: GenericAPITest persistenceTest GenreTest DirectorTest ActorTest JellenReviewTest PersonnelTest CartTest 
 	./GenericAPITest    ;\
 	./persistenceTest	;\
 	./GenreTest			;\
@@ -63,7 +65,7 @@ run-unit-tests: GenericAPITest persistenceTest GenreTest DirectorTest ActorTest 
 	./ActorTest			:\
 	./JellenReviewTest  ;\
 	./PersonnelTest		;\
-	./MovieTest			;\
+	./CartTest			;\
 
 static-analysis:
 	cppcheck *.cpp
