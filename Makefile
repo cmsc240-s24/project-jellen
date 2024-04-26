@@ -15,8 +15,8 @@ Genre.o: Genre.cpp Genre.h
 JellenReview.o: JellenReview.cpp JellenReview.h
 	g++ -Wall -c JellenReview.cpp 
 
-Movie.o: Movie.cpp Movie.h Genre.h JellenReview.h Personnel.h
-	g++ -Wall -c Movie.cpp 
+#Movie.o: Movie.cpp Movie.h Genre.h JellenReview.h Personnel.h
+#	g++ -Wall -c Movie.cpp 
 
 Personnel.o: Personnel.cpp Personnel.h
 	g++ -Wall -c Personnel.cpp
@@ -30,8 +30,8 @@ Director.o: Director.cpp Director.h Personnel.h
 GenericAPI.o: GenericAPI.cpp GenericAPI.h Actor.h Cart.h Director.h Genre.h JellenReview.h Movie.h Personnel.h
 	g++ -Wall -c GenericAPI.cpp 
 
-GenericAPITest: GenericAPITest.cpp GenericAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Movie.o Personnel.o
-	g++ -lpthread GenericAPITest.cpp GenericAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Movie.o Personnel.o -o GenericAPITest
+GenericAPITest: GenericAPITest.cpp GenericAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Personnel.o
+	g++ -lpthread GenericAPITest.cpp GenericAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Personnel.o -o GenericAPITest
 
 persistenceTest: persistenceTest.cpp persistence.h Genre.o
 	g++ -lpthread persistenceTest.cpp Genre.o -o persistenceTest

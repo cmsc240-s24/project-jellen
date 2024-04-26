@@ -21,7 +21,7 @@ map<std::string, Cart> cartsMap = loadFromFile<Cart>("carts.json");
 map<std::string, Director> directorsMap = loadFromFile<Director>("directors.json");
 map<std::string, Genre> genresMap = loadFromFile<Genre>("genres.json");
 map<std::string, JellenReview> reviewsMap = loadFromFile<JellenReview>("reviews.json");
-map<std::string, Movie> moviesMap = loadFromFile<Movie>("movies.json");
+//map<std::string, Movie> moviesMap = loadFromFile<Movie>("movies.json");
 map<std::string, Personnel> personnelMap = loadFromFile<Personnel>("personnel.json");
 
 int main() 
@@ -32,7 +32,7 @@ int main()
     GenericAPI<Director>::resourceMap = directorsMap;
     GenericAPI<Genre>::resourceMap = genresMap;
     GenericAPI<JellenReview>::resourceMap = reviewsMap;
-    GenericAPI<Movie>::resourceMap = moviesMap;
+    //GenericAPI<Movie>::resourceMap = moviesMap;
     GenericAPI<Personnel>::resourceMap = personnelMap;
 
     // Setup the simple web service.
@@ -76,11 +76,11 @@ int main()
     CROW_ROUTE(app, "/api/reviews/<string>").methods("DELETE"_method)(GenericAPI<JellenReview>::deleteResource);
     
     // Movie
-    CROW_ROUTE(app, "/api/movies").methods("POST"_method)(GenericAPI<Movie>::createResource);
-    CROW_ROUTE(app, "/api/movies").methods("GET"_method)(GenericAPI<Movie>::readAllResources);
-    CROW_ROUTE(app, "/api/movies/<string>").methods("GET"_method)(GenericAPI<Movie>::readResource);
-    CROW_ROUTE(app, "/api/movies/<string>").methods("PUT"_method)(GenericAPI<Movie>::updateResource);
-    CROW_ROUTE(app, "/api/movies/<string>").methods("DELETE"_method)(GenericAPI<Movie>::deleteResource);
+    // CROW_ROUTE(app, "/api/movies").methods("POST"_method)(GenericAPI<Movie>::createResource);
+    // CROW_ROUTE(app, "/api/movies").methods("GET"_method)(GenericAPI<Movie>::readAllResources);
+    // CROW_ROUTE(app, "/api/movies/<string>").methods("GET"_method)(GenericAPI<Movie>::readResource);
+    // CROW_ROUTE(app, "/api/movies/<string>").methods("PUT"_method)(GenericAPI<Movie>::updateResource);
+    // CROW_ROUTE(app, "/api/movies/<string>").methods("DELETE"_method)(GenericAPI<Movie>::deleteResource);
 
     // Personnel
     CROW_ROUTE(app, "/api/personnel").methods("POST"_method)(GenericAPI<Personnel>::createResource);
@@ -100,6 +100,6 @@ int main()
     saveToFile<Director>(GenericAPI<Director>::resourceMap, "directors.json");
     saveToFile<Genre>(GenericAPI<Genre>::resourceMap, "genres.json");
     saveToFile<JellenReview>(GenericAPI<JellenReview>::resourceMap, "reviews.json");
-    saveToFile<Movie>(GenericAPI<Movie>::resourceMap, "movies.json");
+    //saveToFile<Movie>(GenericAPI<Movie>::resourceMap, "movies.json");
     saveToFile<Personnel>(GenericAPI<Personnel>::resourceMap, "personnel.json");
 }
