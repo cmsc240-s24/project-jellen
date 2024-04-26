@@ -20,6 +20,6 @@ json::wvalue Personnel::convertToJson()
 // Update from JSON
 void Personnel::updateFromJson(json::rvalue readValueJson) 
 {
-    id = readValueJson["id"].s();
-    name = readValueJson["name"].s();
+    setID(id = readValueJson["id"].s());
+    setName(name = readValueJson["name"].s());
 }
