@@ -42,11 +42,11 @@ json::wvalue Movie::convertToJson()
 // Update from JSON
 void Movie::updateFromJson(json::rvalue readValueJson) 
 {
-    movieID = readValueJson["id"].s();
-    movieTitle = readValueJson["title"].s();
-    movieCost = readValueJson["cost"].d();
-    movieLength = readValueJson["length"].i();
-    linkToMoviePoster = readValueJson["linkToMoviePoster"].s();
+    setID(movieID = readValueJson["id"].s());
+    setTitle(movieTitle = readValueJson["title"].s());
+    setCost(movieCost = readValueJson["cost"].d());
+    setLength(movieLength = readValueJson["length"].i());
+    setPoster(linkToMoviePoster = readValueJson["linkToMoviePoster"].s());
 
     // Setting Personnel
     for (json::rvalue personnelReadValueJson: readValueJson["personnel"])
