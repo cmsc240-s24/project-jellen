@@ -56,15 +56,14 @@ with its catchy songs and uplifting storyline. With its infectious energy and re
         "would watch again":true})"));
 
         // Create the update json.
-        json::rvalue updateJson = json::load(R"({"id":"1","review":"'Good Will Hunting' is a poignant drama that explores themes of intellect, identity, " 
-        "and friendship with powerful performances from its cast. Matt Damon and Robin Williams shine in this emotionally resonant tale of self-discovery and second chances.",
+        json::rvalue updateJson = json::load(R"({"id":"2","review":"'Good Will Hunting' is a poignant drama that explores themes of intellect, identity, and friendship with powerful performances from its cast. Matt Damon and Robin Williams shine in this emotionally resonant tale of self-discovery and second chances.",
         "rating":9,"would watch again":true})");
 
         // Update the Director with the updateFromJson method. 
         testJellenReview.updateFromJson(updateJson);
 
         // Check the updated values.
-        CHECK(testJellenReview.getID() == "1");
+        CHECK(testJellenReview.getID() == "2");
         CHECK(testJellenReview.getReview() == "'Good Will Hunting' is a poignant drama that explores themes of intellect, identity, " 
         "and friendship with powerful performances from its cast. Matt Damon and Robin Williams shine in this emotionally resonant tale of self-discovery and second chances.");
         CHECK(testJellenReview.getRating() == 9);

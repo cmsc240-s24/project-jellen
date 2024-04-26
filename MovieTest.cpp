@@ -15,7 +15,7 @@ TEST_CASE("Testing Movie Class")
 
         // Create a new Movie class from json.
         Movie testMovie(json::load(R"({"id":"1","title":"Schindler's List","cost":3.99,"length": 195, "linkToMoviePoster":
-        "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i","personnel":[{"id": "1"}],"genre":{"id":"1"}, "review":{"id":"1"}})"));
+        "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i","personnel":[{"id": "1"}],"genre":{"id":"1"},"review":{"id":"1"}})"));
 
         // Check that the constructor properly loaded the values.
         CHECK(testMovie.getID() == "1");
