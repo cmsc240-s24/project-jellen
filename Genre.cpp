@@ -21,6 +21,6 @@ json::wvalue Genre::convertToJson()
 // Update from JSON
 void Genre::updateFromJson(json::rvalue readValueJson) 
 {
-    genreID = readValueJson["id"].s();
-    genre = readValueJson["genre"].s();
+    setID(genreID = readValueJson["id"].s());
+    setGenre(genre = readValueJson["genre"].s());
 }
