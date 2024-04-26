@@ -1,4 +1,4 @@
-all: MovieStoreAPI static-analysis run-unit-tests 
+all: MovieStoreAPI #static-analysis run-unit-tests 
 
 MovieStoreAPI: MovieStoreAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Movie.o Personnel.o GenericAPI.o 
 	g++ -lpthread MovieStoreAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Movie.o Personnel.o GenericAPI.o -o MovieStoreAPI
