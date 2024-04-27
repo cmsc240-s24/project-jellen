@@ -3,11 +3,8 @@ all: MovieStoreAPI #static-analysis run-unit-tests
 MovieStoreAPI: MovieStoreAPI.o Actor.o Director.o Genre.o JellenReview.o Personnel.o GenericAPI.o Movie.o
 	g++ -lpthread MovieStoreAPI.o Actor.o Director.o Genre.o JellenReview.o Personnel.o GenericAPI.o Movie.o -o MovieStoreAPI
 
-MovieStoreAPI.o: MovieStoreAPI.cpp Actor.h Cart.h Director.h Genre.h JellenReview.h Movie.h Personnel.h GenericAPI.h persistence.h
+MovieStoreAPI.o: MovieStoreAPI.cpp Actor.h Director.h Genre.h JellenReview.h Movie.h Personnel.h GenericAPI.h persistence.h
 	g++ -Wall -c MovieStoreAPI.cpp 
-
-Cart.o: Cart.cpp Cart.h
-	g++ -Wall -c Cart.cpp 
 
 Genre.o: Genre.cpp Genre.h
 	g++ -Wall -c Genre.cpp 
@@ -27,11 +24,11 @@ Actor.o: Actor.cpp Actor.h Personnel.h
 Director.o: Director.cpp Director.h Personnel.h
 	g++ -Wall -c Director.cpp
 
-GenericAPI.o: GenericAPI.cpp GenericAPI.h Actor.h Cart.h Director.h Genre.h JellenReview.h Personnel.h Movie.h
+GenericAPI.o: GenericAPI.cpp GenericAPI.h Actor.h Director.h Genre.h JellenReview.h Personnel.h Movie.h
 	g++ -Wall -c GenericAPI.cpp 
 
-GenericAPITest: GenericAPITest.cpp GenericAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Personnel.o Movie.o
-	g++ -lpthread GenericAPITest.cpp GenericAPI.o Actor.o Cart.o Director.o Genre.o JellenReview.o Personnel.o Movie.o -o GenericAPITest
+GenericAPITest: GenericAPITest.cpp GenericAPI.o Actor.o Director.o Genre.o JellenReview.o Personnel.o Movie.o
+	g++ -lpthread GenericAPITest.cpp GenericAPI.o Actor.o Director.o Genre.o JellenReview.o Personnel.o Movie.o -o GenericAPITest
 
 persistenceTest: persistenceTest.cpp persistence.h Genre.o
 	g++ -lpthread persistenceTest.cpp Genre.o -o persistenceTest
@@ -51,13 +48,10 @@ JellenReviewTest: JellenReviewTest.cpp JellenReview.cpp JellenReview.h
 PersonnelTest: PersonnelTest.cpp Personnel.cpp Personnel.h
 	g++ -lpthread PersonnelTest.cpp Personnel.o -o PersonnelTest 
 
-#CartTest: CartTest.cpp Cart.cpp Cart.h
-#	g++ -lpthread CartTest.cpp Cart.o -o CartTest
+MovieTest: MovieTest.cpp Movie.o Genre.o Personnel.o JellenReview.o Actor.o Director.o
+	g++ -lpthread MovieTest.cpp Movie.o Genre.o Personnel.o JellenReview.o Actor.o Director.o -o MovieTest
 
-MovieTest: MovieTest.cpp Movie.o Genre.o Personnel.o JellenReview.o Actor.o Cart.o Director.o
-	g++ -lpthread MovieTest.cpp Movie.o Genre.o Personnel.o JellenReview.o Actor.o Cart.o Director.o -o MovieTest
-
-run-unit-tests: GenericAPITest persistenceTest GenreTest DirectorTest ActorTest JellenReviewTest PersonnelTest #CartTest 
+run-unit-tests: GenericAPITest persistenceTest GenreTest DirectorTest ActorTest JellenReviewTest PersonnelTest
 	./GenericAPITest    ;\
 	./persistenceTest	;\
 	./GenreTest			;\
