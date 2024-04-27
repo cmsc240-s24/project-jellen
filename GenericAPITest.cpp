@@ -2,7 +2,6 @@
 #include <crow.h>
 #include <doctest.h>
 #include "Actor.h"
-#include "Cart.h"
 #include "Director.h"
 #include "Genre.h"
 #include "JellenReview.h"
@@ -15,7 +14,6 @@ using namespace std;
 using namespace crow;
 
 map<std::string, Actor> actorsMap;
-map<std::string, Cart> cartsMap;
 map<std::string, Director> directorsMap;
 map<std::string, Genre> genresMap;
 map<std::string, JellenReview> reviewsMap;

@@ -8,7 +8,6 @@
 
 #include <stdexcept>
 #include "Actor.h"
-#include "Cart.h"
 #include "Director.h"
 #include "GenericAPI.h"
 #include "Genre.h"
@@ -188,7 +187,6 @@ response GenericAPI<T>::deleteResource(string id)
 
 // Explicit template instantiation
 template class GenericAPI<Actor>;
-//template class GenericAPI<Cart>;
 template class GenericAPI<Director>;
 template class GenericAPI<Genre>;
 template class GenericAPI<JellenReview>;

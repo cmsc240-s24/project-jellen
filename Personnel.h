@@ -62,12 +62,6 @@ class Personnel
          * @return crow::json::wvalue
          */
         void updateFromJson(crow::json::rvalue readValueJson);
-        
-        /**
-         * @brief Convert the Cart object to JSON
-         * @return crow::json::wvalue
-         */
-        crow::json::wvalue convertToJson();
 
     private:
         /**

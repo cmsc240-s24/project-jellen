@@ -3,7 +3,6 @@
 #include <csignal>
 #include <string>
 #include "Actor.h"
-#include "Cart.h"
 #include "Director.h"
 #include "Genre.h"
 #include "JellenReview.h"
@@ -16,7 +15,6 @@ using namespace crow;
 
 // Load resources from files.
 map<std::string, Actor> actorsMap = loadFromFile<Actor>("actors.json");
-//map<std::string, Cart> cartsMap = loadFromFile<Cart>("carts.json");
 map<std::string, Director> directorsMap = loadFromFile<Director>("directors.json");
 map<std::string, Genre> genresMap = loadFromFile<Genre>("genres.json");
 map<std::string, JellenReview> reviewsMap = loadFromFile<JellenReview>("reviews.json");
@@ -28,7 +26,6 @@ int main()
     cout << "beginning of main" << endl;
     // Create GenericAPIs to use in the CROW_ROUTES
     GenericAPI<Actor>::resourceMap = actorsMap;
-    //GenericAPI<Cart>::resourceMap = cartsMap;
     GenericAPI<Director>::resourceMap = directorsMap;
     GenericAPI<Genre>::resourceMap = genresMap;
     GenericAPI<JellenReview>::resourceMap = reviewsMap;
@@ -51,13 +48,6 @@ int main()
     CROW_ROUTE(app, "/api/actors/<string>").methods("PUT"_method)(GenericAPI<Actor>::updateResource);
     CROW_ROUTE(app, "/api/actors/<string>").methods("DELETE"_method)(GenericAPI<Actor>::deleteResource);
     cout << "after crow actor route" << endl;
-    
-    // Cart
-    // CROW_ROUTE(app, "/api/carts").methods("POST"_method)(GenericAPI<Cart>::createResource);
-    // CROW_ROUTE(app, "/api/carts").methods("GET"_method)(GenericAPI<Cart>::readAllResources);
-    // CROW_ROUTE(app, "/api/carts/<string>").methods("GET"_method)(GenericAPI<Cart>::readResource);
-    // CROW_ROUTE(app, "/api/carts/<string>").methods("PUT"_method)(GenericAPI<Cart>::updateResource);
-    // CROW_ROUTE(app, "/api/carts/<string>").methods("DELETE"_method)(GenericAPI<Cart>::deleteResource);
 
     // Director
     cout << "before Director actor route" << endl;
@@ -111,7 +101,6 @@ int main()
     // Perform persistence of resources
     cout << "persistence: " << endl;
     saveToFile<Actor>(GenericAPI<Actor>::resourceMap, "actors.json");
-    //saveToFile<Cart>(GenericAPI<Cart>::resourceMap, "carts.json");
     saveToFile<Director>(GenericAPI<Director>::resourceMap, "directors.json");
     saveToFile<Genre>(GenericAPI<Genre>::resourceMap, "genres.json");
     saveToFile<JellenReview>(GenericAPI<JellenReview>::resourceMap, "reviews.json");
