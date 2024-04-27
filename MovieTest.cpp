@@ -14,8 +14,7 @@ TEST_CASE("Testing Movie Class")
     {
 
         // Create a new Movie class from json.
-        Movie testMovie(json::load(R"({"id":"1","title":"Schindler's List","cost":3.99,"length": 195, "linkToMoviePoster":
-        "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i","personnel":[{"id": "1"}],"genre":{"id":"1"},"review":{"id":"1"}})"));
+        Movie testMovie(json::load(R"({"id": "1","title": "Schindler's List","cost": 3.99,"length": 195,"linkToMoviePoster": "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i","personnel": [{"id": "1"}],"genre": {"id": "1"},"review": {"id": "1"}})"));
 
         // Check that the constructor properly loaded the values.
         CHECK(testMovie.getID() == "1");
@@ -33,8 +32,7 @@ TEST_CASE("Testing Movie Class")
     SUBCASE("Testing the convertToJson Method") 
     {
         // Create a new Movie class from json.
-        Movie testMovie(json::load(R"({"id":"1","title":"Schindler's List","cost":3.99,"length": 195, "linkToMoviePoster":
-        "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i","personnel":[{"id": "1"}],"genre":{"id":"1"}, "review":{"id":"1"}})"));
+        Movie testMovie(json::load(R"({"id": "1","title": "Schindler's List","cost": 3.99,"length": 195,"linkToMoviePoster": "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i","personnel": [{"id": "1"}],"genre": {"id": "1"},"review": {"id": "1"}})"));
 
         // Convert the Movie class to json using the convertToJson method.
         json::wvalue jsonOutput = testMovie.convertToJson();
@@ -57,18 +55,16 @@ TEST_CASE("Testing Movie Class")
     SUBCASE("Testing updateFromJson Method") 
     {
         // Create a new Movie class from json.
-        Movie testMovie(json::load(R"({"id":"1","title":"Schindler's List","cost":3.99,"length": 195, "linkToMoviePoster":
-        "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i","personnel":[{"id": "1"}],"genre":{"id":"1"}, "review":{"id":"1"}})"));
+        Movie testMovie(json::load(R"({"id": "1","title": "Schindler's List","cost": 3.99,"length": 195,"linkToMoviePoster": "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i","personnel": [{"id": "1"}],"genre": {"id": "1"},"review": {"id": "1"}})"));
 
         // Create the update json.
-        json::rvalue updateJson = json::load(R"({"id":"1","title":"Fight Club","cost":3.99,"length": 139, "linkToMoviePoster":
-        "https://www.imdb.com/title/tt0137523/mediaviewer/rm1412004864/?ref_=tt_ov_i","personnel":[{"id": "1"}],"genre":{"id":"1"}, "review":{"id":"1"}})");
+        json::rvalue updateJson = json::load(R"({"id": "2","title": "Fight Club","cost": 3.99,"length": 139,"linkToMoviePoster": "https://www.imdb.com/title/tt0137523/mediaviewer/rm1412004864/?ref_=tt_ov_i","personnel": [{"id": "1"}],"genre": {"id": "1"},"review": {"id": "1"}})");
 
         // Update the Movie with the updateFromJson method. 
         testMovie.updateFromJson(updateJson);
 
         // Check the updated values.
-        CHECK(testMovie.getID() == "1");
+        CHECK(testMovie.getID() == "2");
         CHECK(testMovie.getTitle() == "Fight Club");
         CHECK(testMovie.getCost() == 3.99);
         CHECK(testMovie.getLength() == 139);
