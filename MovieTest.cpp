@@ -58,7 +58,7 @@ TEST_CASE("Testing Movie Class")
         Movie testMovie(json::load(R"({"id": "1","title": "Schindler's List","cost": 3.99,"length": 195,"linkToMoviePoster": "https://www.imdb.com/title/tt0108052/mediaviewer/rm1610023168/?ref_=tt_ov_i","personnel": [{"id": "1"}],"genre": {"id": "1"},"review": {"id": "1"}})"));
 
         // Create the update json.
-        json::rvalue updateJson = json::load(R"({"id": "2","title": "Fight Club","cost": 3.99,"length": 139,"linkToMoviePoster": "https://www.imdb.com/title/tt0137523/mediaviewer/rm1412004864/?ref_=tt_ov_i","personnel": [{"id": "1"}],"genre": {"id": "1"},"review": {"id": "1"}})");
+        json::rvalue updateJson = json::load(R"({"id": "2","title": "Fight Club","cost": 3.99,"length": 139,"linkToMoviePoster": "https://www.imdb.com/title/tt0137523/mediaviewer/rm1412004864/?ref_=tt_ov_i","personnel": [{"id": "2"}],"genre": {"id": "2"},"review": {"id": "2"}})");
 
         // Update the Movie with the updateFromJson method. 
         testMovie.updateFromJson(updateJson);
@@ -68,9 +68,9 @@ TEST_CASE("Testing Movie Class")
         CHECK(testMovie.getTitle() == "Fight Club");
         CHECK(testMovie.getCost() == 3.99);
         CHECK(testMovie.getLength() == 139);
-        CHECK(testMovie.getGenre().getID() == "1");
-        CHECK(testMovie.getPersonnel()[0].getID() == "1");
-        CHECK(testMovie.getReview().getID() == "1");
+        CHECK(testMovie.getGenre().getID() == "2");
+        CHECK(testMovie.getPersonnel()[0].getID() == "2");
+        CHECK(testMovie.getReview().getID() == "2");
         CHECK(testMovie.getPoster() == "https://www.imdb.com/title/tt0137523/mediaviewer/rm1412004864/?ref_=tt_ov_i");
     }
 }
