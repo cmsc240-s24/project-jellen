@@ -60,7 +60,7 @@ map<string, T> loadFromFile(string filename)
         for (json::rvalue item : jsonReadValue) 
         {
             T object{item};
-            data[object.getID()] = object;
+            data[object.getId()] = object;
         }
     }
     
