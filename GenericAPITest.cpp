@@ -8,6 +8,7 @@
 #include "Movie.h"
 #include "Personnel.h"
 #include "GenericAPI.h"
+#include <map>
 
 
 using namespace std;

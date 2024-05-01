@@ -14,6 +14,7 @@
 #include "JellenReview.h"
 #include "Movie.h"
 #include "Personnel.h"
+#include <map>
 
 using namespace std;
 using namespace crow;

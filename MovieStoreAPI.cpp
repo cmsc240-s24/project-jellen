@@ -23,31 +23,24 @@ map<std::string, Personnel> personnelMap = loadFromFile<Personnel>("personnel.js
 
 int main() 
 {
-    cout << "beginning of main" << endl;
     // Create GenericAPIs to use in the CROW_ROUTES
     GenericAPI<Actor>::resourceMap = actorsMap;
     GenericAPI<Director>::resourceMap = directorsMap;
     GenericAPI<Genre>::resourceMap = genresMap;
     GenericAPI<JellenReview>::resourceMap = reviewsMap;
-    
-    cout << "making movieMap: " << endl;
     GenericAPI<Movie>::resourceMap = moviesMap;
-    
     GenericAPI<Personnel>::resourceMap = personnelMap;
 
     // Setup the simple web service.
     SimpleApp app;
 
     // Define resources:
-
     // Actor
-    cout << "before crow actor route" << endl;
     CROW_ROUTE(app, "/api/actors").methods("POST"_method)(GenericAPI<Actor>::createResource);
     CROW_ROUTE(app, "/api/actors").methods("GET"_method)(GenericAPI<Actor>::readAllResources);
     CROW_ROUTE(app, "/api/actors/<string>").methods("GET"_method)(GenericAPI<Actor>::readResource);
     CROW_ROUTE(app, "/api/actors/<string>").methods("PUT"_method)(GenericAPI<Actor>::updateResource);
     CROW_ROUTE(app, "/api/actors/<string>").methods("DELETE"_method)(GenericAPI<Actor>::deleteResource);
-    cout << "after crow actor route" << endl;
 
     // Director
     CROW_ROUTE(app, "/api/directors").methods("POST"_method)(GenericAPI<Director>::createResource);

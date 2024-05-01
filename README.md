@@ -19,7 +19,6 @@ Online Movie API
 Classes/objects:
 Movie: genre, title, price, director
 User: username, password, shipping address, payment method.
-Shopping cart: number of items, cost, etc.
 Order: list of movies ordered, prices, order number, updates
 
 
