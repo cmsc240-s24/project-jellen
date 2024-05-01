@@ -60,6 +60,12 @@ class Personnel
         /**
          * @brief Convert the Personnel object to JSON
          * @return crow::json::wvalue
+         */ 
+        crow::json::wvalue convertToJson();
+
+        /**
+         * @brief Convert the Personnel object to JSON
+         * @return crow::json::wvalue
          */
         void updateFromJson(crow::json::rvalue readValueJson);
 
